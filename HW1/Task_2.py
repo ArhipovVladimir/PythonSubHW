@@ -7,10 +7,10 @@ MAX_LIMIT = 100000
 while True:
     print(f'Веедите число между 1 и {MAX_LIMIT}')
     num = int(input())
-    if num < 0 or num > MAX_LIMIT:
-        print(f'Число {num} не в границах интервала 0 и {MAX_LIMIT}')
-    else:
+    if 0 <= num <= MAX_LIMIT:
         break
+        
+    print(f'Число {num} не в границах интервала 0 и {MAX_LIMIT}')
 
 count = 0
 for i in range(1, num+1):
