@@ -12,7 +12,7 @@ def check_delta (a, b, c):
         return 'разносторонний'
 
 print('введите стороны треугольника')
-delta = (int(input()), int(input()), int(input()))
+delta = int(input()), int(input()), int(input())
 a, b, c = delta
 
 
