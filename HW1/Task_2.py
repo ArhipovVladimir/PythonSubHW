@@ -12,12 +12,9 @@ while True:
         
     print(f'Число {num} не в границах интервала 0 и {MAX_LIMIT}')
 
-count = 0
 for i in range(1, num+1):
     if num % i == 0:
-        count += 1
+        print(f'число {num} составное')
 
-if count <= 2:
-    print(f'число {num} простое')
 else:
-    print(f'число {num} составное')
+    print(f'число {num} простое')
