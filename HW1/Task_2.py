@@ -15,6 +15,6 @@ while True:
 for i in range(1, num + 1):
     if num % i == 0:
         print(f'число {num} составное')
-
+# не получается  постоянно сообщение что число составное
 else:
     print(f'число {num} простое')
