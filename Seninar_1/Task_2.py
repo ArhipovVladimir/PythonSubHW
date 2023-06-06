@@ -13,13 +13,15 @@
 
 import sys
 
-data = [1, 1.0, 'ddd', True, -2]
+data = ['ddd', 1, 1.0, 'ddf', True, -2, 'gff', 1]
 for i, elem in enumerate(data, 1):
-    print(i, elem, id(elem), sys.getsizeof(elem), hash(elem))
+    print(i, elem, type(elem), id(elem), sys.getsizeof(elem), hash(elem), end='; ')
+    if isinstance(elem, int) and int(elem) > 0:
+        print('число')
     if isinstance(elem, str):
         print('строка')
-    if isinstance(elem, int):
-        print('число')
+
+
 
 
 
