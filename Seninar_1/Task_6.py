@@ -22,13 +22,23 @@ def pop_money(account):
 def exit(account):
     return account
 
+def valid_oper ():
+    while True:
+        sum_oper = int(input('введите сумму кратную 50'))
+        if sum_oper % 50 == 0:
+            break
+        return sum_oper
+
+
 account = START_SUM
 
 while True:
-    choice = input('Выберите дествие (1-пополнить, 2-снять, выйти')
+    choice = input('Выберите дествие (1-пополнить, 2-снять, выйти сумма операции кратна 50')
     match choice:
-        case '1'
-
-        case '2'
-
-        case '3'
+        case '1':
+            cahe_oper = valid_oper()
+            add_money(account, cahe_oper)
+        case '2':
+            pop_money(account)
+        case '3':
+            exit(account)
