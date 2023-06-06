@@ -12,20 +12,22 @@
 ✔ Любое действие выводит сумму денег'''
 
 START_SUM = 0
+DEV = 50
 
-def add_money(account):
-    pass
-
-def pop_money(account):
-    pass
-
-def exit(account):
+def add_money(account, sum_tranz):
     return account
 
-def valid_oper ():
+def pop_money(account, sum_tranz):
+    return account
+
+def exit(account):
+    print(f'останток на счете  {account}')
+    exit()
+
+def valid_oper (dev):
     while True:
-        sum_oper = int(input('введите сумму кратную 50'))
-        if sum_oper % 50 == 0:
+        sum_oper = int(input(f'введите сумму кратную {dev}'))
+        if sum_oper % dev == 0:
             break
         return sum_oper
 
@@ -36,9 +38,12 @@ while True:
     choice = input('Выберите дествие (1-пополнить, 2-снять, выйти сумма операции кратна 50')
     match choice:
         case '1':
-            cahe_oper = valid_oper()
-            add_money(account, cahe_oper)
+            cahe_oper = valid_oper(DEV)
+            res = add_money(account, cahe_oper)
+            print(f'останток на счете  {res}')
         case '2':
-            pop_money(account)
+            cahe_oper = valid_oper(DEV)
+            res = pop_money(account, cahe_oper)
+            print(f'останток на счете  {res}')
         case '3':
             exit(account)
