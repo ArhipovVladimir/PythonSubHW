@@ -12,9 +12,9 @@ from decimal import Decimal
 decimal.getcontext().prec = 42
 
 def param(d):
-    p = pi * ((d / 2) ** 2)
-    l = d * pi
-    return p, l
+    square = decimal.Decimal(pi * d * d / 4)
+    length_1 = decimal.Decimal(pi * d)
+    return square, length_1
 
 
 while True:
@@ -23,4 +23,5 @@ while True:
         break
     print('Введено больше  1000')
 
-print(param(diam))
+print(*param(diam))
+
