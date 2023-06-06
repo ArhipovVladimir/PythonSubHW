@@ -11,3 +11,24 @@
 операцией, даже ошибочной
 ✔ Любое действие выводит сумму денег'''
 
+START_SUM = 0
+
+def add_money(account):
+    pass
+
+def pop_money(account):
+    pass
+
+def exit(account):
+    return account
+
+account = START_SUM
+
+while True:
+    choice = input('Выберите дествие (1-пополнить, 2-снять, выйти')
+    match choice:
+        case '1'
+
+        case '2'
+
+        case '3'
