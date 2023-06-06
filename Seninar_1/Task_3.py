@@ -10,10 +10,15 @@
 ✔ Добавьте аннотацию типов где это возможно'''
 
 
-num = int(input('введите число: '))
+def conv(number: int, system: int) -> bool:
+    temp = ''
+    while number > 0:
+        temp = temp + str(number % system)
+        number //= system
+    return temp[::-1]
 
-string = ''
-while num > 0:
-    string += str(num % 2)
-    num //= 2
-print(string[::-1])
+
+
+num, syst = map(int, input('введите число: ').split())
+print(f'Число {num} в системе {syst} исчисления рано {conv(num, syst)}')
+print(f'проверка двоичная {bin(num)}; восьмеричная {oct(num)}')
