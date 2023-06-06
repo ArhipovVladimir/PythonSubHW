@@ -13,7 +13,7 @@
 
 import sys
 
-data = ['ddd', 1, 1.0, 'ddf', True, -2, 'gff', 1]
+data = ["ddd", 1, 1.0, "ddf", True, -2, "gff", 1]
 for i, elem in enumerate(data, 1):
     print(i, elem, type(elem), id(elem), sys.getsizeof(elem), hash(elem), end='; ')
     if isinstance(elem, int) and int(elem) > 0:
