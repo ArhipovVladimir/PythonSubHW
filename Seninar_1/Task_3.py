@@ -9,13 +9,20 @@
 ✔ Избегайте магических чисел
 ✔ Добавьте аннотацию типов где это возможно'''
 
+# def conv(number: int, system: int) -> bool:
+#     temp = ''
+#     while number > 0:
+#         temp = temp + str(number % system)
+#         number //= system
+#     return temp[::-1]
 
-def conv(number: int, system: int) -> bool:
-    temp = ''
+def conv(number: int, system: int) -> list:
+    temp = []
     while number > 0:
-        temp = temp + str(number % system)
+        temp.append(str(number % system))
         number //= system
-    return temp[::-1]
+    temp.reverse()
+    return ''.join(temp)
 
 
 

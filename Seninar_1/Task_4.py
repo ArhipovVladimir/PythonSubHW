@@ -6,3 +6,21 @@
 ✔ Точность вычислений должна составлять
 не менее 42 знаков после запятой.
 '''
+import decimal
+from math import pi
+from decimal import Decimal
+decimal.getcontext().prec = 42
+
+def param(d):
+    p = pi * ((d / 2) ** 2)
+    l = d * pi
+    return p, l
+
+
+while True:
+    diam = int(input('Веедите диамет круга до 1000 у.е.'))
+    if diam < 1000:
+        break
+    print('Введено больше  1000')
+
+print(param(diam))
