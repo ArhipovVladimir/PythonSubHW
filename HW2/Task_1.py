@@ -14,6 +14,9 @@
 START_SUM = 0
 DEV = 50
 BONUS_VALUE = 0.03
+COUNT_BONUS_OPER = 3
+TASK_RICH = 5000_000
+TASK = 0.10
 count =0
 
 def sum_morj(sum_tran):
@@ -60,14 +63,14 @@ while True:
     match choice:
         case '1':
             cahe_oper = valid_oper(DEV)
-            if count % 3 == 0:
+            if count % COUNT_BONUS_OPER == 0:
                 flag = True
             account = add_money(account, cahe_oper, flag)
             print(f'останток на счете  {account}')
             count += 1
         case '2':
             cahe_oper = valid_oper(DEV)
-            if count % 3 == 0:
+            if count % COUNT_BONUS_OPER == 0:
                 bonus = BONUS_VALUE
             else:
                 bonus = 0
@@ -75,9 +78,9 @@ while True:
             print(f'останток на счете  {account}')
             count += 1
         case '3':
-            if account > 5000_0000:
-                print(f'налог  {round(account * 0.10, 2)}')
-                account = round(account * 0.90, 2)
+            if account > TASK_RICH:
+                print(f'налог  {round(account * TASK, 2)}')
+                account = round(account * (1-TASK), 2)
                 print(f'останток на счете  {account}')
             else:
                 print(f'останток на счете  {account}')
