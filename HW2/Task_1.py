@@ -73,10 +73,11 @@ while True:
                 bonus = 0
             account = pop_money(account, cahe_oper, bonus)
             print(f'останток на счете  {account}')
-            count += 1+
+            count += 1
         case '3':
             if account > 5000_0000:
-                account = account - round(account * 0.10, 2)
+                print(f'налог  {round(account * 0.10, 2)}')
+                account = round(account * 0.90, 2)
                 print(f'останток на счете  {account}')
             else:
                 print(f'останток на счете  {account}')
