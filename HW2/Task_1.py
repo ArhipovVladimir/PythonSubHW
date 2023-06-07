@@ -16,43 +16,64 @@ DEV = 50
 BONUS_VALUE = 0.03
 count =0
 
+def sum_morj(sum_tran):
+    if round(sum_tran * 0.015, 2) < 30:
+        return 30
+    elif round(sum_tran * 0.015, 2) > 600:
+        return 600
+    else:
+        return round(sum_tran * 0.015, 2)
+
 def add_money(account, sum_tranz, bonus):
     if bonus:
         account = account + round(sum_tranz * BONUS_VALUE, 2)
-    else: account = account + sum_tranz
+    else:
+        account = account + sum_tranz
     return account
 
-def pop_money(account, sum_tranz):
-    return account
+def pop_money(account, sum_tranz, bonus):
+    morj = sum_morj(sum_tranz)
+    if bonus:
+        res = account + round(sum_tranz * BONUS_VALUE, 2) - morj - sum_tranz
+        if res < 0:
+            print(f'недостаточно средств баланс - {account}')
+            return account
+        else:
+            return res
+    else:
+        res = account - sum_tranz - morj
+        if res < 0:
+            print(f'недостаточно средств баланс - {account}')
+            return account
+        else:
+            return res
 
-def exit(account):
-    print(f'останток на счете  {account}')
-
-
-def valid_oper (dev):
-    global DEV
+def valid_oper (dev_sum):
     while True:
-        sum_oper = int(input(f'введите сумму кратную {dev}'))
-        if sum_oper % DEV == 0:
+        sum_oper = int(input(f'введите сумму кратную {dev_sum}: '))
+        if sum_oper % dev_sum == 0:
             return sum_oper
 
 
 account = START_SUM
-
+count = 1
 while True:
-    choice = input('Выберите дествие (1-пополнить, 2-снять, 3-выйти')
+    choice = input('Выберите дествие (1-пополнить, 2-снять, 3-выйти): ')
     flag = False
     match choice:
         case '1':
             cahe_oper = valid_oper(DEV)
             if count % 3 == 0 and count != 0:
                 flag = True
-            res = add_money(account, cahe_oper, flag)
-            print(f'останток на счете  {res}')
+            account = add_money(account, cahe_oper, flag)
+            print(f'останток на счете  {account}')
+            count += 1
         case '2':
             cahe_oper = valid_oper(DEV)
-            res = pop_money(account, cahe_oper)
-            print(f'останток на счете  {res}')
+            if count % 3 == 0 and count != 0:
+                flag = True
+            account = pop_money(account, cahe_oper, flag)
+            print(f'останток на счете  {account}')
         case '3':
-            exit(account)
+            print(f'останток на счете  {account}')
             exit()
