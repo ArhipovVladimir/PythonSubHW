@@ -33,15 +33,14 @@ def valid_oper (dev):
     global DEV
     while True:
         sum_oper = int(input(f'введите сумму кратную {dev}'))
-        if sum_oper % DEV != 0:
-            break
-        return sum_oper
+        if sum_oper % DEV == 0:
+            return sum_oper
 
 
 account = START_SUM
 
 while True:
-    choice = input('Выберите дествие (1-пополнить, 2-снять, выйти сумма операции кратна 50')
+    choice = input('Выберите дествие (1-пополнить, 2-снять, 3-выйти')
     flag = False
     match choice:
         case '1':
@@ -57,4 +56,3 @@ while True:
         case '3':
             exit(account)
             exit()
-
