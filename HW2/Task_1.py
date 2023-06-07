@@ -17,7 +17,6 @@ BONUS_VALUE = 0.03
 COUNT_BONUS_OPER = 3
 TASK_RICH = 5000_000
 TASK = 0.10
-count =0
 
 def sum_morj(sum_tran):
     if sum_tran * 0.015 < 30:
