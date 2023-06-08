@@ -1,5 +1,4 @@
-'''
-дание №6
+"""Здание №6
 Напишите программу банкомат.
 ✔ Начальная сумма равна нулю
 ✔ Допустимые действия: пополнить, снять, выйти
@@ -9,7 +8,7 @@
 ✔ Нельзя снять больше, чем на счёте
 ✔ При превышении суммы в 5 млн, вычитать налог на богатство 10% перед каждой
 операцией, даже ошибочной
-✔ Любое действие выводит сумму денег'''
+✔ Любое действие выводит сумму денег"""
 
 START_SUM = 0
 DEV = 50
@@ -18,7 +17,8 @@ COUNT_BONUS_OPER = 3
 TASK_RICH = 5000_000
 TASK = 0.10
 
-def sum_morj(sum_tran):
+
+def sum_m(sum_tran):
     if sum_tran * 0.015 < 30:
         print(f'за снятие 30')
         return 30
@@ -26,28 +26,30 @@ def sum_morj(sum_tran):
         print(f'за снятие 600')
         return 600
     else:
-         res_morj = round(sum_tran * 0.015, 2)
-         print(f'за снятие {res_morj}')
-         return res_morj
+        res_m = round(sum_tran * 0.015, 2)
+        print(f'за снятие {res_m}')
+        return res_m
 
 
-def add_money(account, sum_tranz, bonus):
-    if bonus:
-        account = account + sum_tranz + round(sum_tranz * BONUS_VALUE, 2)
+def add_money(account_add, sum_tranz, bonus_add):
+    if bonus_add:
+        account_add = account_add + sum_tranz + round(sum_tranz * BONUS_VALUE, 2)
     else:
-        account = account + sum_tranz
-    return account
+        account_add = account_add + sum_tranz
+    return account_add
 
-def pop_money(account, sum_tranz, bonus):
-    morj = sum_morj(sum_tranz)
-    res = account + round(sum_tranz * bonus, 2) - morj - sum_tranz
+
+def pop_money(account_pop, sum_tranz, bonus_pop):
+    morj = sum_m(sum_tranz)
+    res = account_pop + round(sum_tranz * bonus_pop, 2) - morj - sum_tranz
     if res < 0:
-         print(f'недостаточно средств баланс - {account}')
-         return account
+        print(f'недостаточно средств баланс - {account_pop}')
+        return account_pop
     else:
-         return res
+        return res
 
-def valid_oper (dev_sum):
+
+def valid_oper(dev_sum):
     while True:
         sum_oper = int(input(f'введите сумму кратную {dev_sum}: '))
         if sum_oper % dev_sum == 0:
@@ -79,7 +81,7 @@ while True:
         case '3':
             if account > TASK_RICH:
                 print(f'налог  {round(account * TASK, 2)}')
-                account = round(account * (1-TASK), 2)
+                account = round(account * (1 - TASK), 2)
                 print(f'останток на счете  {account}')
             else:
                 print(f'останток на счете  {account}')
