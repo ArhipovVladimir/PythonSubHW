@@ -9,6 +9,7 @@
 ✔ При превышении суммы в 5 млн, вычитать налог на богатство 10% перед каждой
 операцией, даже ошибочной
 ✔ Любое действие выводит сумму денег"""
+import decimal
 
 START_SUM = 0
 DEV = 50
@@ -16,7 +17,7 @@ BONUS_VALUE = 0.03
 COUNT_BONUS_OPER = 3
 TASK_RICH = 5000_000
 TASK = 0.10
-
+decimal.getcontext().prec=2
 
 def sum_m(sum_tran):
     if sum_tran * 0.015 < 30:
