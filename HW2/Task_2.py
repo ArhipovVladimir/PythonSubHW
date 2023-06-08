@@ -3,22 +3,21 @@
 его шестнадцатеричное строковое представление.
 Функцию hex используйте для проверки своего результата.
 '''
-
-def conv(number: int, system: int) -> list:
-    dict_hex = {1: '1', 2: '2', 3: '3', 4: '4', 5: '5',
-                6: '6', 7: '7', 8: '8', 9: '9', 10: 'A',
-                11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
-    # dict_hex = dict(1: 1, 2: 2, 3 = 3, 4 = 4, 5 = 5, 6 = 6, 7 = 7, 8 = 8, 9 = 9, 10 = 'A', 11 = 'B', 12 = 'C')
+SYSTEM = 16
+def conv(number, sys):
+    dict_hex = {0:'0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5',
+                6: '6', 7: '7', 8: '8', 9: '9', 10: 'a',
+                11: 'b', 12: 'c', 13: 'd', 14: 'e', 15: 'f'}
+    # dict_hex = dict(0 = '0', 1= '1', 2 = '2', 3 = '3', 4 = '4', 5 = '5', 6 = '6', 7 = '7', 8 = '8', 9 = '9', 10 = 'A', 11 = 'B', 12 = 'C')
     temp = []
     while number > 0:
-        elem = dict_hex[number % system]
-        temp.append(elem)
-        number //= system
+        temp.append(dict_hex[number % sys])
+        number //= sys
     temp.reverse()
     return ''.join(temp)
 
 
 
-num, syst = map(int, input('введите число: ').split())
-print(f'Число {num} в системе {syst} исчисления рано {conv(num, syst)}')
-print(f'проверка двоичная {bin(num)}; восьмеричная {oct(num)} шеснадцатеричная {hex(num)}')
+num = int(input('введите число: '))
+print(f'Число {num} в системе {SYSTEM} исчисления рано 0x{conv(num, SYSTEM)}')
+print(f'проверка шеснадцатеричная {hex(num)}')
