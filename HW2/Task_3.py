@@ -6,6 +6,12 @@ import fractions
 import re
 import math
 
+def ReduceFraction(n, m):
+    x = math.gcd(n, m)
+    p = n // x
+    q = m // x
+    return p, q
+
 a1, b1, = map(int, re.split('/', input('Веедите две дроби в формате a/b: ')))
 a2, b2, = map(int, re.split('/', input('Веедите две дроби в формате a/b: ')))
 
@@ -16,10 +22,12 @@ nok = math.lcm(b1, b2)
 print(nok)
 
 numerator_sum = (int(nok / b1) * a1) + (int(nok / b2) * a2)
-print(f'результат суммы {numerator_sum}/{nok}')
+numer_sum, deomer_sum = ReduceFraction(numerator_sum, nok)
+print(f'результат суммы {numer_sum}/{deomer_sum}')
 f1 = fractions.Fraction(a1, b1)
 f2 = fractions.Fraction(a2, b2)
 print(f'Проверка суммы {f1 + f2}')
-print(f'результат умножения {a1 * a2}/{b1 * b2}')
+numer_mult, deomer_mult = ReduceFraction(a1 * a2, b1 * b2)
+print(f'результат умножения {numer_mult}/{deomer_mult}')
 print(f'Проверка умножения {f1 * f2}')
 
