@@ -11,13 +11,11 @@ a2, b2, = map(int, re.split('/', input('Веедите две дроби в фо
 
 # a1, b1, a2, b2 = map(int, input('Веедите две дhоби в формате a/b: ').split('/' ''))
 
-print(a1, b1, a2, b2)
-
 nok = math.lcm(b1, b2)
 
 print(nok)
 
-numerator_sum = (nok / b1 * a1) + (nok / b2 * a2)
+numerator_sum = (int(nok / b1) * a1) + (int(nok / b2) * a2)
 print(f'результат суммы {numerator_sum}/{nok}')
 f1 = fractions.Fraction(a1, b1)
 f2 = fractions.Fraction(a2, b2)
