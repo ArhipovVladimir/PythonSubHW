@@ -6,8 +6,14 @@
 хотя бы одна заглавная буква
 ✔ Строку в нижнем регистре в остальных случаях"""
 
-txet = input('Введитее строку: ')
+text = input('Введитее строку: ')
 
-if  txet is digit and int(txet) > 0:
-    digit = int(txet)
-    print(f'{digit = } {type(digit)}')
+if text.isdecimal():
+    if int(text) > 0:
+        digit_text = int(text)
+        print(f'{digit_text = } {type(digit_text)}')
+
+if text.replace('.', '').replace('-','').replace(',''').isdecimal() \
+and text.count('.') == 1 and text.count('-') <= 1 and text[1:].count('-'):
+       float_text = float(text)
+       print(f'{float_text = } {type(float_text)}')
