@@ -34,10 +34,9 @@ def sum_m(sum_tran):
 
 def add_money(account_add, sum_tranz, bonus_add):
     if bonus_add:
-        account_add = account_add + sum_tranz + round(sum_tranz * BONUS_VALUE, 2)
-    else:
-        account_add = account_add + sum_tranz
-    return account_add
+        return account_add + sum_tranz + round(sum_tranz * BONUS_VALUE, 2)
+
+    return  account_add + sum_tranz
 
 
 def pop_money(account_pop, sum_tranz, bonus_pop):
