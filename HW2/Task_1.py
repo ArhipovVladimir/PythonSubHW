@@ -23,13 +23,13 @@ def sum_m(sum_tran):
     if sum_tran * 0.015 < 30:
         print(f'за снятие 30')
         return 30
-    elif sum_tran * 0.015 > 600:
+    if sum_tran * 0.015 > 600:
         print(f'за снятие 600')
         return 600
-    else:
-        res_m = round(sum_tran * 0.015, 2)
-        print(f'за снятие {res_m}')
-        return res_m
+
+    res_m = round(sum_tran * 0.015, 2)
+    print(f'за снятие {res_m}')
+    return res_m
 
 
 def add_money(account_add, sum_tranz, bonus_add):
