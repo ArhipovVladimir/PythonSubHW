@@ -6,3 +6,8 @@
 хотя бы одна заглавная буква
 ✔ Строку в нижнем регистре в остальных случаях"""
 
+txet = input('Введитее строку: ')
+
+if  txet is digit and int(txet) > 0:
+    digit = int(txet)
+    print(f'{digit = } {type(digit)}')
