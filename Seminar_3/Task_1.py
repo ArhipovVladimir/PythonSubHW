@@ -18,6 +18,7 @@ print(f'{list_hand = }')
 print(len(list_hand))
 
 list_unik = list(set(list_hand))
+list_unik4 = [*set(list_hand)]
 
 print(f'{list_unik = }')
 print(len(list_unik))
@@ -38,3 +39,5 @@ for elem in list_hand:
 print(f'{list_unik3 = }')
 print(len(list_unik3))
 
+print(f'{list_unik4 = }')
+print(len(list_unik4))
