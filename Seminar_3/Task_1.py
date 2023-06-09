@@ -16,16 +16,25 @@ for _ in range(30):
 
 print(f'{list_hand = }')
 print(len(list_hand))
+
 list_unik = list(set(list_hand))
+
 print(f'{list_unik = }')
 print(len(list_unik))
 
 list_unik2 = []
-for i in list_hand:
-    if list_hand.count(i) == 1:
-        list_unik2.append(i)
+for elem in list_hand:
+    if list_hand.count(elem) == 1:
+        list_unik2.append(elem)
 
 print(f'{list_unik2 = }')
 print(len(list_unik2))
 
+list_unik3 = []
+for elem in list_hand:
+    if elem not in list_unik3:
+        list_unik3.append(elem)
+
+print(f'{list_unik3 = }')
+print(len(list_unik3))
 
