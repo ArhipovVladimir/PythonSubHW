@@ -45,8 +45,8 @@ def pop_money(account_pop, sum_tranz, bonus_pop):
     if res < 0:
         print(f'недостаточно средств баланс - {account_pop}')
         return account_pop
-    else:
-        return res
+
+    return res
 
 
 def valid_oper(dev_sum):
