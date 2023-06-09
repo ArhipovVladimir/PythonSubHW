@@ -13,7 +13,8 @@ if text.isdecimal():
         digit_text = int(text)
         print(f'{digit_text = } {type(digit_text)}')
 
-if text.replace('.', '').replace('-','').replace(',''').isdecimal() \
-and text.count('.') == 1 and text.count('-') <= 1 and text[1:].count('-'):
+if text.replace('.','').replace('-','').replace(',','').isdecimal() and \
+     text.count('.') == 1 and text.count('-') <= 1 and text[1:].count('-'):
        float_text = float(text)
        print(f'{float_text = } {type(float_text)}')
+
