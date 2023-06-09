@@ -8,10 +8,12 @@ print(my_list)
 
 rez_list = []
 
-
+counter = 1
 for item in my_list:
-  if item % 2 != 0 and my_list.index(item) < :
-         rez_list.append(my_list.index(item)+1)
+    if item % 2 != 0:
+        rez_list.append(counter)
+    counter +=1
+
 
 
 
