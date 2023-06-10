@@ -10,11 +10,10 @@
 Объясните почему они совпадают
 или не совпадают в ваших решениях.
 """
-text = 'Вова едент в санаторий, на 12 дней'
-# text = input('Введите текст: ')
+
+text = input('Введите текст: ')
 text = text.replace(' ', '').replace(',', '').lower()
 char_list = [char for char in text]
-print(char_list)
 res_dict = {}
 for car in char_list:
     # res_dict.setdefault(car, {}).add(char_list.count(car))
