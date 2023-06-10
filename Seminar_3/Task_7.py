@@ -18,10 +18,7 @@ print(char_list)
 res_dict = {}
 for car in char_list:
     # res_dict.setdefault(car, {}).add(char_list.count(car))
-    if car in res_dict:
-    if type(item) in dickt_res:
-        dickt_res[type(item)].append(item)
-    else:
-         dickt_res[type(item)] = [item]
+    if car not in res_dict:
+          res_dict[car] = text.count(car)
 
 print(res_dict)
