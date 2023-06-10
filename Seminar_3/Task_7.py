@@ -10,7 +10,7 @@
 Объясните почему они совпадают
 или не совпадают в ваших решениях.
 """
-#  c count
+# c count
 # text = input('Введите текст: ')
 # text = text.replace(' ', '').replace(',', '').lower()
 # char_list = [char for char in text]
@@ -24,16 +24,29 @@
 
 # без count
 
+
 text = input('Введите текст: ')
 text = text.replace(' ', '').replace(',', '').lower()
 char_list = [char for char in text]
 res_dict = {}
 char_list.sort()
-count = 0
-for i in len(char_list) - 1:
-    if char_list[i] == char_list [i+1]:
+print(char_list)
+count = 1
+for i in range(1, len(char_list)):
+    if char_list[i] != char_list[i-1]:
+        res_dict[char_list[i-1]] = count
+        count = 1
+    else:
         count += 1
+
+count = 1
+for i in range(len(char_list)-1, 0, -1):
+    if char_list[i] == char_list[i-1]:
+       count += 1
     else:
         res_dict[char_list[i]] = count
+        break
+
 
 print(res_dict)
+
