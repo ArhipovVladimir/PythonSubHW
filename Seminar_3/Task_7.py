@@ -10,7 +10,7 @@
 Объясните почему они совпадают
 или не совпадают в ваших решениях.
 """
-
+#  c count
 text = input('Введите текст: ')
 text = text.replace(' ', '').replace(',', '').lower()
 char_list = [char for char in text]
@@ -21,3 +21,6 @@ for car in char_list:
           res_dict[car] = text.count(car)
 
 print(res_dict)
+
+# без count
+
