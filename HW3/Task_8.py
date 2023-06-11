@@ -10,3 +10,16 @@
 на любое большее количество друзей."""
 
 
+things= {'Serg': ('удочка', 'дождевик', 'списки'),
+        'Nik': ('дождевик', 'кастрюля', 'спички'),
+        'Pit': ('палатка', 'половник', 'спички', 'дождевик')}
+
+# не могу решить
+
+# all_things = set(' ')
+# for thing in things.values():
+#     list_thing = list(thing)
+#     all_things.add(list_thing)
+#
+# print(all_things)
+
