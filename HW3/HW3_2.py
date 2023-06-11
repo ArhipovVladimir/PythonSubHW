@@ -4,7 +4,7 @@
 За основу возьмите любую статью из википедии или из
 документации к языку.'''
 
-text = ' высокоуровневый язык программирования общего назначения с динамической строгой' \
+text = 'высокоуровневый язык программирования общего назначения с динамической строгой' \
 ' типизацией и автоматическим управлением памятью, ориентированный на повышение' \
 '  производительности разработчика, читаемости кода и его качества, а также на обеспечение' \
 '  переносимости написанных на нём программ. Язык является полностью объектно-ориентированным' \
@@ -20,8 +20,18 @@ split_text = text.replace(',', ''). \
         replace('!', ''). \
         replace('?', ''). \
         replace('"', ''). \
-        lower()
+        lower().split()
 
-dict_count_worf = {}
+dict_count_word = {}
 
+# print(split_text)
 for word in split_text:
+    if split_text.count(word) not in dict_count_word:
+        dict_count_word[split_text.count(word)] = set(word)
+    dict_count_word[split_text.count(word)].add(word)
+
+print(max(dict_count_word.keys()))
+
+for number in range(max(dict_count_word.keys()), 0, -1):
+    print(f'колличество {number}, слова {dict_count_word.get(number)}')
+
