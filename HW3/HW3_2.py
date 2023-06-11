@@ -15,6 +15,8 @@ text = 'высокоуровневый язык программирования
 '  языка являются зачастую более низкая скорость работы и более высокое потребление памяти написанных' \
 '   на нём программ по сравнению с аналогичным кодом, написанным на компилируемых языках, таких как C или C++.'
 
+LIMIT = 10
+
 split_text = text.replace(',', ''). \
         replace('.', ''). \
         replace('!', ''). \
@@ -30,8 +32,12 @@ for word in split_text:
         dict_count_word[split_text.count(word)] = set(word)
     dict_count_word[split_text.count(word)].add(word)
 
-print(max(dict_count_word.keys()))
+# print(max(dict_count_word.keys()))
 
-for number in range(max(dict_count_word.keys()), 0, -1):
-    print(f'колличество {number}, слова {dict_count_word.get(number)}')
+coun = 0
+for number, word in dict_count_word.items():
+    print(f'колличество {number}, слова {word}')
+    coun += 1
+    if coun > LIMIT:
+        break
 
