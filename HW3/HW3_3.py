@@ -5,7 +5,7 @@
 
 stuff = {'матрас': 1, 'кострюля': 2, 'палатка': 3, 'обувь': 5, 'одеяло': 3}
 
-def backpack_capacity(capacity, stuff):
+def backpack(capacity, stuff):
     packaging = []
     for item, value in stuff.items():
         if value <= capacity:
@@ -14,4 +14,4 @@ def backpack_capacity(capacity, stuff):
     return packaging
 
 
-print(f' возможный комплект: {backpack_capacity(10, stuff)}')
+print(f' возможный комплект: {backpack(10, stuff)}')
