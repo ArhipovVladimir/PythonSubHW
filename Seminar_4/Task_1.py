@@ -8,7 +8,7 @@
 '''
 
 def sort_word (words):
-    words_sort = sorted(words.split())
+    words_sort = words.split().sort()
     point =
     print(point)
     print(words_sort)
@@ -20,3 +20,5 @@ sort_word('Напишите функцию, которая принимает с
 # point = len(max(text_sort))
 # for number, word in enumerate(text_sort, start=1):
 #     print(f'{number} {word:}')
+text_sort = text.split()
+text_sort.sort()
