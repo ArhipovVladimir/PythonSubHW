@@ -13,18 +13,15 @@
 # c count
 # text = input('Введите текст: ')
 # text = text.replace(' ', '').replace(',', '').lower()
-# char_list = [char for char in text]
 # res_dict = {}
-# for car in char_list:
-#     # res_dict.setdefault(car, {}).add(char_list.count(car))
-#     if car not in res_dict:
-#           res_dict[car] = text.count(car)
+# for car in text:
+#     res_dict.setdefault(car, text.count(car))
 #
 # print(res_dict)
 
 # без count
 
-
+#
 text = input('Введите текст: ')
 text = text.replace(' ', '').replace(',', '').lower()
 char_list = [char for char in text]
@@ -32,7 +29,7 @@ res_dict = {}
 char_list.sort()
 print(char_list)
 count = 1
-for i in range(1, len(char_list)):
+for i in range(1, len(text)):
     if char_list[i] != char_list[i-1]:
         res_dict[char_list[i-1]] = count
         count = 1
