@@ -39,6 +39,8 @@ def add_money(account, sum_tranz, bonus):
     return account
 
 def pop_money(account, sum_tranz, bonus):
+    """функция производит снятие со счета """
+
     morj = sum_morj(sum_tranz)
     res = account + round(sum_tranz * bonus, 2) - morj - sum_tranz
     if res < 0:
