@@ -3,6 +3,7 @@
 Не учитывать знаки препинания и регистр символов.
 За основу возьмите любую статью из википедии или из
 документации к языку.'''
+from audioop import reverse
 
 text = 'Певец Стас Пьеха в воскресенье, 11 июня, подтвердил свою госпитализацию в Боткинскую ' \
        'больницу и рассказал о проблемах с сердцем.' \
@@ -25,16 +26,9 @@ dict_count_word = {}
 
 # print(split_text)
 for word in split_text:
-    if split_text.count(word) not in dict_count_word:
-        dict_count_word[split_text.count(word)] = set(word)
-    dict_count_word[split_text.count(word)].add(word)
+    dict_count_word.setdefault(word, split_text.count(word))
 
-# print(max(dict_count_word.keys()))
+w_value = (sorted(dict_count_word.items(), key=lambda x: x[1]))[:-LIMIT:-1]
 
-coun = 0
-for number, word in dict_count_word.items():
-    print(f'колличество {number}, слова {word}')
-    coun += 1
-    if coun > LIMIT:
-        break
+print(w_value)
 
