@@ -59,7 +59,7 @@ count = 1
 while True:
     choice = int(input('Выберите дествие (1-пополнить, 2-снять, 3-выйти): '))
     flag = False
-    if choice == 1:
+    if choice ==1:
 
             cahe_oper = valid_oper(DEV)
             if count % COUNT_BONUS_OPER == 0:
