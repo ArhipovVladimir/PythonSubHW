@@ -1,5 +1,5 @@
 '''
-Задание №3
+Задание №39
 ✔ Функция получает на вход строку из двух чисел через пробел.
 ✔ Сформируйте0 словарь, где ключом будет
 символ из Unicode, а значением — целое число.
@@ -11,8 +11,11 @@ def num_dict (digit_str):
     res_dict = {}
     a, b = sorted(map(int, digit_str.split()))
     for item in range (a, b + 1):
-        print(item)
-        res_dict.setdefault(int(ord(item)), item)
+
+        # print(type(str(item)), item)
+        # print(ord(str(item)))
+        res_dict.setdefault((str(ord(item))), item)
+        # dict_count_word.setdefault(word, split_text.count(word))
     print(a, b)
     print(res_dict)
 
