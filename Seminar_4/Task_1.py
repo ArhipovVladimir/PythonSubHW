@@ -7,3 +7,11 @@
 длинного слова был один пробел между ним и номером строки.
 '''
 
+def kpd_word (text_str):
+
+
+
+enter_text = 'Привет как дела'
+# text = input('Enter text')
+kpd_word(enter_text)
+
