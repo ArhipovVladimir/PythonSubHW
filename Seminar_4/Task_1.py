@@ -7,11 +7,16 @@
 длинного слова был один пробел между ним и номером строки.
 '''
 
-def kpd_word (text_str):
+def kod_word (text_str):
+
+    text_sort = text.split()
+    text_sort.sort()
+    print(text)
+    print(f'{text_sort =}')
+    point = len(max(text_sort, key=len))
+    for number, word in enumerate(text_sort, start=1):
+        print(f'{number} {word:>{point}}')
 
 
-
-enter_text = 'Привет как дела'
-# text = input('Enter text')
-kpd_word(enter_text)
-
+text = input('Введите текст: ')
+kod_word (text)
