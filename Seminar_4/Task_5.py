@@ -19,7 +19,7 @@ def salary (name, tax, b):
     dict_salary = {}
     bonus_ok = [*map(lambda x: (float(x.replace(',', '.').replace('%', '')))/100, b)]
     for x in zip(name, tax, bonus_ok):
-        dict_salary.setdefault(x[0], x[1] * x[2])
+        dict_salary.setdefault(x[0], x[1] + x[1] * x[2])
     print(dict_salary)
 
 
