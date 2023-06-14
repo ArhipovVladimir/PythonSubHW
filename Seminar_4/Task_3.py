@@ -11,11 +11,9 @@ def num_dict (digit_str):
     res_dict = {}
     a, b = sorted(map(int, digit_str.split()))
     for item in range (a, b + 1):
+        res_dict.setdefault((chr(item), item))
+    #     map(res_dict.setdefault, range (a, b + 1))
 
-        # print(type(str(item)), item)
-        # print(ord(str(item)))
-        res_dict.setdefault((str(ord(item))), item)
-        # dict_count_word.setdefault(word, split_text.count(word))
     print(a, b)
     print(res_dict)
 
