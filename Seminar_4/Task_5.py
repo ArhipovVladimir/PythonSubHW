@@ -8,3 +8,16 @@
 премии в качестве значения.
 ✔ Сумма рассчитывается как ставка умноженная на процент премии.
 '''
+
+name = ['Ivan', 'Petr', 'Serg', 'Fedot']
+tax = [1000, 1200, 900, 1500]
+bonus = ['10,3%', '10.5', '10,25', '10,75']
+
+
+
+def salary (name, tax, b):
+    dict_salary = {}
+    bonus_ok = [*map(lambda x: float(x.replace(',', '.').replace('%', '')), b)]
+
+
+salary (name, tax, bonus)
