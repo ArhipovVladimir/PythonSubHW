@@ -5,6 +5,6 @@
 '''
 
 def code_list(text):
-    return sorted((map(ord, text)), reverse=True)
+    return sorted((map(ord, set(text))), reverse=True)
 
 print(code_list(input('Enter text: ')))
