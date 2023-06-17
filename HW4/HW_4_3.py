@@ -83,6 +83,8 @@ while True:
                 print(f'налог  {round(account * TASK, 2)}')
                 account = round(account * (1-TASK), 2)
                 print(f'останток на счете  {account}')
+                history_file(account, round(account * TASK, 2), 'exit')
                 break
             print(f'останток на счете  {account}')
+            history_file(account, 'exit')
             break
