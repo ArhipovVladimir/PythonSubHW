@@ -5,7 +5,6 @@
 '''
 
 
-
 def hashable_dicts(**kwargs):
     pets = dict()
     for k, v in kwargs.items():
