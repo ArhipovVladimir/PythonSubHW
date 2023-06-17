@@ -13,7 +13,7 @@
 def hashable_dicts(**kwargs):
     pets = dict()
     for k, v in kwargs.items():
-        if isinstance(v, (list, dict, set, bytearray)):
+        if isinstance(v, (list, dict, set)):
             v = str(v)
         pets[v] = k
     return pets
