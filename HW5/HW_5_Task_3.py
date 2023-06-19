@@ -18,7 +18,7 @@ def gen_fibo(num):
 
 
 
-fibo_user = gen_fibo(5)
+fibo_user = gen_fibo(int(input('Enter num: ')))
 print(*fibo_user)
 
 
