@@ -19,8 +19,8 @@
 
 user_patch = "C:\PycharmProjects\PythonSubHW\HW5\HW_5_Task_1.py"
 
-*_, name_type_file = user_patch.split('\\')
+*only_patch, name_type_file = user_patch.split('\\')
 name_file, type_file = name_type_file.split('.')
-path_file, *_= str(user_patch.split('.')[:-1]).split('\\')
+path_file= ("\\").join(only_patch)
 print(path_file, name_file, type_file, sep='\n')
 
