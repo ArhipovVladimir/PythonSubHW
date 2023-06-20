@@ -29,6 +29,6 @@ def funk_round(min_lim, max_lim, level):
         return False
 
 
-min_lim, max_lim, level = map(int, argv.split())
+min_lim, max_lim, level = map(int, argv)
 funk_round(min_lim, max_lim, level)
 
