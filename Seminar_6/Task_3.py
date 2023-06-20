@@ -28,8 +28,10 @@ def funk_round(min_lim, max_lim, level):
         print(f' колическо попыток ичерпано - компьютер загадывал {digit}')
         return False
 
-print(argv)
-_, min_lim, max_lim, level = map(int, argv)
-print(min_lim, max_lim, level)
-# funk_round(min_lim, max_lim, level)
+# argv = ['task.py', '1', '10', '5']
+
+# print(argv)
+min_lim, max_lim, level = map(int, argv[1:])
+# print(min_lim, max_lim, level)
+funk_round(min_lim, max_lim, level)
 
