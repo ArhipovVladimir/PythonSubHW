@@ -4,3 +4,15 @@
 Программа возвращает номер попытки, с которой была отгадана загадка или ноль, если попытки исчерпаны.
 
 '''
+
+
+def rebus_todo(rebus_use, variant, level):
+    print(f'загадка {rebus_use}')
+    # print(f'варианты {variant}')
+    while level > 0:
+        resalt = input('введите ответ ')
+        if resalt in variant:
+            return level
+        level -= 1
+    return 0
+
