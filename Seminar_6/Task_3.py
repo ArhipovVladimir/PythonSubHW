@@ -30,7 +30,7 @@ def funk_round(min_lim, max_lim, level):
 
 # argv = ['task.py', '1', '10', '5']
 
-# print(argv)
+# использую срез [1:] списка argv так как в первый аргумент попадает имя модуля
 min_lim, max_lim, level = map(int, argv[1:])
 # print(min_lim, max_lim, level)
 funk_round(min_lim, max_lim, level)
