@@ -6,3 +6,17 @@
 Для формирования результатов используйте генераторное выражение.
 
 '''
+__all__ = ['_dict_resalt']
+
+_dict_resalt = {}
+
+
+def save_resalt(rebus_use, resalt_round):
+    _dict_resalt[rebus_use] = resalt_round
+
+
+def output_resalt():
+    for item in _dict_resalt.items():
+        print(f'загадка {item[0]} отгадана с {item[1]} попытки')
+
+
