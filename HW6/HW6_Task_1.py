@@ -48,7 +48,7 @@ if __name__ == '__main__':
         # print(argv)
         # min_lim, max_lim, level = map(int, map(str, argv[1:]))
 
-        dd, mm, yyyy = (map(int, argv[1:]))
+        dd, mm, yyyy = map(int, argv[1:])
         print(dd, mm, yyyy)
         if 1 < yyyy <= 9999:
             break
