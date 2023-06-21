@@ -6,13 +6,14 @@
 '''
 
 __all__ = ['rebus_todo']
-def rebus_todo(rebus_use, variant, level):
+
+def rebus_todo(rebus_use, variant, level= 3):
     print(f'загадка {rebus_use}')
     # print(f'варианты {variant}')
     count = 1
     while level > 0:
 
-        resalt = input('введите ответ ')
+        resalt = input('ответ ').lower()
         if resalt in variant:
             return count
         level -= 1

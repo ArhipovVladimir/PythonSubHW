@@ -16,7 +16,10 @@ def save_resalt(rebus_use, resalt_round):
 
 
 def output_resalt():
-    for item in _dict_resalt.items():
-        print(f'загадка {item[0]} отгадана с {item[1]} попытки')
+    output = "\n".join([f" загадка {key}: отгадана с {value} попытки" for key, value in _dict_resalt.items()])
+    print(output)
+
+    # for item in _dict_resalt.items():
+    #     print(f'загадка {item[0]} отгадана с {item[1]} попытки')
 
 
