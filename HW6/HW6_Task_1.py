@@ -44,12 +44,12 @@ def check_date(dd, mm, yyyy):
 if __name__ == '__main__':
 
     while True:
-        argv = ['dddcs', '23.01.2023']
         _, *params = argv
         dd, mm, yyyy = map(int, str(params[0]).split('.'))
         print(dd, mm, yyyy)
         if 1 < yyyy <= 9999:
              break
+
 
 
     if check_date(dd, mm, yyyy):
