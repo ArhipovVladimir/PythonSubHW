@@ -13,6 +13,8 @@ def check_day(dd, mm, yyyy):
         return False
     elif dd == 31 and mm not in list_monat:
         return False
+    elif dd == 30 and mm == 2:
+        return False
     elif dd == 29 and mm == 2:
         if _check_yare(yyyy):
             return True
