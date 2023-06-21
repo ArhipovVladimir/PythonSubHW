@@ -1,8 +1,11 @@
 '''
 Решить задачи, которые не успели решить на семинаре.
+
 В модуль с проверкой даты добавьте возможность запуска в
 терминале с передачей даты на проверку.
 '''
+
+from sys import argv
 
 def check_day(dd, mm, yyyy):
     list_monat = [1, 3, 5, 7, 8, 10, 12]
@@ -38,10 +41,13 @@ def check_date(dd, mm, yyyy):
     return all([check_day(dd, mm, yyyy), check_monat(mm)])
 
 
-if __name__ == '--main__':
+if __name__ == '__main__':
 
     while True:
-        dd, mm, yyyy = map(int, input('введите дату в формае DD.MM.YYYY в диапазоне [1, 9999]: ').split('.'))
+        argv = ['dddcs', '21.06.2023']
+        print(argv)
+        dd, mm, yyyy = map(int, str(argv[1:]).split('.'))
+        print(dd, mm, yyyy)
         if 1 < yyyy <= 9999:
             break
 
