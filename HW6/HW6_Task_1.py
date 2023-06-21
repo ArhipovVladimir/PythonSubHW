@@ -44,9 +44,10 @@ def check_date(dd, mm, yyyy):
 if __name__ == '__main__':
 
     while True:
-        argv = ['dddcs', '21.06.2023']
-        print(argv)
-        dd, mm, yyyy = *(map(int, argv[1:]))
+        # argv = ['dddcs', '21.06.2023']
+        # print(argv)
+        # min_lim, max_lim, level = map(int, map(str, argv[1:]))
+        dd, mm, yyyy = (map(int, argv[1:]))
         print(dd, mm, yyyy)
         if 1 < yyyy <= 9999:
             break
