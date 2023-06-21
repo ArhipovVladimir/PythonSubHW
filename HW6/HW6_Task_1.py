@@ -44,14 +44,13 @@ def check_date(dd, mm, yyyy):
 if __name__ == '__main__':
 
     while True:
-        # argv = ['dddcs', '23.01.2023']
-        # print(argv)
-        # min_lim, max_lim, level = map(int, map(str, argv[1:]))
-
-        dd, mm, yyyy = map(int, argv[1:])
+        argv = ['dddcs', '23.01.2023']
+        _, *params = argv
+        dd, mm, yyyy = map(int, str(params[0]).split('.'))
         print(dd, mm, yyyy)
         if 1 < yyyy <= 9999:
-            break
+             break
+
 
     if check_date(dd, mm, yyyy):
         print('дата может существовать')
