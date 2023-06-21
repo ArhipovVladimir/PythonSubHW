@@ -42,14 +42,14 @@ def check_date(dd, mm, yyyy):
     return all([check_day(dd, mm, yyyy), check_monat(mm)])
 
 
+if __name__ == '--main__':
 
-# if __name__=='--main__':
-while True:
-    dd, mm, yyyy = map(int, input('введите дату в формае DD.MM.YYYY в диапазоне [1, 9999]: ').split('.'))
-    if 1 < yyyy <= 9999:
-        break
+    while True:
+        dd, mm, yyyy = map(int, input('введите дату в формае DD.MM.YYYY в диапазоне [1, 9999]: ').split('.'))
+        if 1 < yyyy <= 9999:
+            break
 
-if check_date(dd, mm, yyyy):
+    if check_date(dd, mm, yyyy):
         print('дата может существовать')
-else: print('дата не возможна')
+    print('дата не возможна')
 
