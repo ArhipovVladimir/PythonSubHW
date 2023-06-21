@@ -42,14 +42,14 @@ def check_date(dd, mm, yyyy):
 
 
 if __name__ == '__main__':
+    _, *params = argv
+    dd, mm, yyyy = map(int, str(params[0]).split('.'))
+    print(dd, mm, yyyy)
 
     while True:
-        _, *params = argv
-        dd, mm, yyyy = map(int, str(params[0]).split('.'))
-        print(dd, mm, yyyy)
         if 1 < yyyy <= 9999:
              break
-
+        dd, mm, yyyy = map(int, input('введите дату в формате DD.MM.YYYY в диапазоне [1, 9999]: ').split('.'))
 
 
     if check_date(dd, mm, yyyy):
