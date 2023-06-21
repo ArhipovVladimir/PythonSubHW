@@ -46,7 +46,7 @@ if __name__ == '__main__':
     while True:
         argv = ['dddcs', '21.06.2023']
         print(argv)
-        dd, mm, yyyy = map(int, str(argv[1:]).split('.'))
+        dd, mm, yyyy = *(map(int, argv[1:]))
         print(dd, mm, yyyy)
         if 1 < yyyy <= 9999:
             break
