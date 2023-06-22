@@ -9,21 +9,27 @@
  Если ферзи не бьют друг друга верните истину, а если бьют - ложь.
 
 '''
+def eight_queens (posiz):
+    print (len(posiz))
+    for pivot in range(len(posiz)):
+        for point in range(pivot + 1, len(posiz)):
+            print(posiz[pivot])
+            print(posiz[point])
+            if posiz[pivot][0] == posiz[point][0] or posiz[pivot][1] == posiz[point][1] \
+                    or abs(posiz[pivot][0] - posiz[pivot][1]) == abs(posiz[point][0] - posiz[point][1]):
+                print('stop')
+                return False
+    print('OK')
+    return True
 
 
-def eight_queens (points_queens):
-    correct = True
-    for pivot in range(len(points_queens)):
-        for point in range(pivot + 1, len(points_queens)):
-            print()
-            if points_queens[pivot][0] == points_queens[point][0] \
-                    or  points_queens[pivot][1] == points_queens[point][1] or abs(points_queens[pivot][0] )
+        
+if __name__ == '__main__': 
+    variant = [[1, 2], [2, 4], [8, 5], [4, 7], [8, 1], [7, 4], [3, 8], [3, 1]]
+    eight_queens(variant)
+    
 
-
-            if  pivot [0] == point [0] or pivot [1] == point [1] or abs (pivot[0] - point[0])\
-                == abs (pivot [1] - point [1]):
-                    correct = False
-
-
-points = [[1,4], [2,8], [3,5], [6,4], [7,3], [5,2], [4,2]]
-eight_queens(points)
+# if  pivot [0] == point [0] \
+            #         or pivot [1] == point [1] \
+            #         or abs (pivot[0] - point[0]) == abs (pivot [1] - point [1]):
+            #         correct = False
