@@ -9,3 +9,12 @@
  Если ферзи не бьют друг друга верните истину, а если бьют - ложь.
 
 '''
+
+def eight_queens (points_queens):
+    for point in points_queens:
+        print(point[0])
+        print(point[1])
+
+
+points = ((1,4),(2,8))
+eight_queens(points)
