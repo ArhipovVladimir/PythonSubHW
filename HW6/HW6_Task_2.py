@@ -9,12 +9,16 @@
  Если ферзи не бьют друг друга верните истину, а если бьют - ложь.
 
 '''
+SEIZI = 8
 
 def eight_queens (points_queens):
-    for point in points_queens:
-        print(point[0])
-        print(point[1])
+    correct = True
+    for point_0 in range(SEIZI):
+        for point_1 in range(point_0 + 1, SEIZI):
+            if point_0 [0] == point_1 [0] or point_0 [1] == point_1 [1] or abs (point_0[0] - point_1[0])\
+                == abs (point_0 [1] - point_1 [1]):
+                    correct = False
 
 
-points = ((1,4),(2,8))
+points = [[1,4], [2,8], [3,5], [6,4], [7,3], [5,2], [4,2]]
 eight_queens(points)
