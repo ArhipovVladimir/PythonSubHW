@@ -9,14 +9,19 @@
  Если ферзи не бьют друг друга верните истину, а если бьют - ложь.
 
 '''
-SEIZI = 8
+
 
 def eight_queens (points_queens):
     correct = True
-    for point_0 in range(SEIZI):
-        for point_1 in range(point_0 + 1, SEIZI):
-            if point_0 [0] == point_1 [0] or point_0 [1] == point_1 [1] or abs (point_0[0] - point_1[0])\
-                == abs (point_0 [1] - point_1 [1]):
+    for pivot in range(len(points_queens)):
+        for point in range(pivot + 1, len(points_queens)):
+            print()
+            if points_queens[pivot][0] == points_queens[point][0] \
+                    or  points_queens[pivot][1] == points_queens[point][1] or abs(points_queens[pivot][0] )
+
+
+            if  pivot [0] == point [0] or pivot [1] == point [1] or abs (pivot[0] - point[0])\
+                == abs (pivot [1] - point [1]):
                     correct = False
 
 
