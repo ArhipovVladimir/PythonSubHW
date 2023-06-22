@@ -2,21 +2,21 @@
 Напишите функцию в шахматный модуль. Используйте генератор случайных чисел для
 случайной расстановки ферзей в задаче выше. Проверяйте различный
  случайные  варианты и выведите 4 успешных расстановки.
-
 '''
-from random import randint
+from HW6_Task_3 import get_pozis
+from HW6_Task_2 import eight_queens
 
+count = 4
+dict_res = {}
+while count > 0:
+    variatn = get_pozis()
+    # print(variatn)
+    res = eight_queens(get_pozis())
+    # print(res)
+    if res:
+        dict_res[count] = variatn
+        count -= 1
+        print('oK')
 
-SIZE = 8
-def get_pozis():
-    list_posis = []
-    for i in range(SIZE):
-        list_point = []
-        for j in range(2):
-            list_point.append(randint(1, SIZE))
-        list_posis.append(list_point)
-    return list_posis
-
-if __name__ == '__main__':
-    print(get_pozis())
-
+print(dict_res)
+# with
