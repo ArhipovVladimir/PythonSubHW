@@ -22,23 +22,23 @@ def check_day(day, month, yare):
     return True
 
 
-def check_monht(mm):
-    if mm > 12:
+def check_monht(monat):
+    if - 1 > monat > 12:
         return False
     return True
 
 
 def _check_yare(yare):
-    return yare % 4 != 0 or yare % 100 == 0 and yare % 400 != 0
+    # return yare % 4 != 0 or yare % 100 == 0 and yare % 400 != 0
 
-    # if yare % 4 != 0:
-    #     return False
-    # elif yare % 100 == 0:
-    #     if yare % 400 == 0:
-    #         return True
-    #     return False
-    # else:
-    #     return True
+    if yare % 4 != 0:
+        return False
+    elif yare % 100 == 0:
+        if yare % 400 == 0:
+            return True
+        return False
+    else:
+        return True
 
 
 def check_date(day, month, yare):
