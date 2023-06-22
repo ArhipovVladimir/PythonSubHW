@@ -7,6 +7,7 @@
  Программа получает на вход восемь пар чисел, каждое число от 1 до 8 - координаты 8 ферзей.
  Если ферзи не бьют друг друга верните истину, а если бьют - ложь.
 '''
+__all__= ['eight_queens']
 def eight_queens (pozis):
     for pivot in range(len(pozis)):
         for point in range(pivot + 1, len(pozis)):
@@ -15,8 +16,8 @@ def eight_queens (pozis):
             if pozis[pivot][0] == pozis[point][0] or pozis[pivot][1] == pozis[point][1] \
                     or abs(pozis[pivot][0] - pozis[point][0]) == abs(pozis[pivot][1] - pozis[point][1]):
                 # print('stop')
-                return True
-    return False
+                return False
+    return True
 
 
         

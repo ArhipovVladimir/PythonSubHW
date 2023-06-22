@@ -5,7 +5,7 @@
 
 '''
 from random import randint
-
+__all__=['get_pozis']
 
 SIZE = 8
 def get_pozis():
