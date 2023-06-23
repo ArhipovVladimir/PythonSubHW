@@ -13,7 +13,7 @@ bonus = ['10.3%', '10.5%', '10.25%', '10.75%']
 
 
 bonus_ok = [*map(lambda x: (float(x.replace('%', ''))) / 100, bonus)]
-dict_salary_only = {item[0]: item[1] + item[1] * item[2] for item in zip(name, tax, bonus_ok)}
+dict_salary_only = {name: tax + tax * bonus_ok for name, tax, bonus_ok in zip(name, tax, bonus_ok)}
 
 print(dict_salary_only)
 
