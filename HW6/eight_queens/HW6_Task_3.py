@@ -10,10 +10,7 @@ __all__ = ['get_pozis']
 def get_pozis(size=8):
     list_posis = []
     for i in range(size):
-        list_point = []
-        for j in range(2):
-            list_point.append(randint(1, size))
-        list_posis.append(list_point)
+        list_posis.append([randint(1, size), randint(1, size)])
     return list_posis
 
 
