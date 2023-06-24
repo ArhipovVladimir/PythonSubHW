@@ -15,7 +15,6 @@ def save_variant(*arg):
 
 
 def start(count, size=8):
-    count = count
     dict_res = {}
     while count > 0:
         variatn = get_pozis(size)
