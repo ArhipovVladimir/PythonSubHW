@@ -11,34 +11,14 @@ __all__ = ['eight_queens']
 
 
 def eight_queens(pozis):
-    # chech = pozis[1:]
-    # print(chech)
-    # print(pozis)
     pivot = 0
     for x0, y0 in pozis:
         pivot += 1
         for x1, y1 in pozis[pivot:]:
             if x0 == x1 or y0 == y1 or abs(x0 - x1) == abs(y0 - y1):
-                # print(f'точка 0 - ({x0} {y0})')
-                # print(f'точка 1 - ({x1} {y1})')
-                # print('stop')
                 return False
     return True
-#     for pivot in range(len(pozis)):
-#         for point in range(pivot + 1, len(pozis)):
-#             # print(f' pivot {pozis[pivot][0], pozis[pivot][1]}')
-#             # print(f' pozis {pozis[point][0], pozis[point][1]}')
-#             # print(f' step  = {step}')
-#             # step += 1
-#
-#
-#
-#             if pozis[pivot][0] == pozis[point][0] or pozis[pivot][1] == pozis[point][1]\
-#                     or abs(pozis[pivot][0] - pozis[point][0]) == abs(pozis[pivot][1] - pozis[point][1]):
-#                 print('stop')
-#                 return False
-#     return True
-#
+
 
 if __name__ == '__main__':
     variant = [[8, 4], [1, 5], [6, 8], [3, 1], [2, 3], [4, 7], [5, 2], [7, 6]]
