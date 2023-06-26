@@ -10,22 +10,21 @@
 from random import randint
 MIN_LEN = 4
 MAX_LEN = 7
+START_INDEX_CHR = 97
+END_INDEX_CHR = 122
 
-def get_name_file():
-    len_name_file = randint(MIN_LEN, MAX_LEN + 1)
-    str_name = ''
+def get_name_file(count_name, name):
     # map(lambda x: x = chr(randint(97, 122)) for _ in range(len_name_file))
-    for _ in range(len_name_file):
-        str_name += chr(randint(97, 122))
+    for _ in range(count_name):
+        len_name_file = randint(MIN_LEN, MAX_LEN)
+        str_name = ''
+        for _ in range(len_name_file):
+            str_name += chr(randint(START_INDEX_CHR, END_INDEX_CHR))
+        str_name = str_name.capitalize()
 
-    str_name=str_name.capitalize()
-
-    with open('file_name.txt', 'a') as f:
-        f.write(f'{str_name}\n')
-
-
-
-
+        with open(f'{name}', 'a') as f:
+            f.write(f'{str_name}\n')
 
 
-get_name_file()
+if __name__ == '__main__':
+    get_name_file(20, 'file_name.txt')

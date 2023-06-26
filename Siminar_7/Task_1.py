@@ -14,11 +14,12 @@ MAX_NUM = 1000
 
 
 def get_file(count_str, name_file):
-    with open(f'{name_file}', 'w') as f:
+    with open(name_file, 'w') as f:
         for _ in range(count_str):
-            f.write(f'{randint(MIN_NUM, MAX_NUM)} | '
+            f.write(f'{randint(MIN_NUM, MAX_NUM)}|'
                          f'{uniform(MIN_NUM ,MAX_NUM)}\n')
 
 
 
-get_file(20, 'file_num.txt')
+if __name__ == '__main__':
+    get_file(20, 'file_num.txt')
