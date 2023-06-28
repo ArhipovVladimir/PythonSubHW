@@ -5,3 +5,9 @@
 (добавьте проверки).
 ✔ Существующие файлы не должны удаляться/изменяться в случае совпадения имён.
 """
+from Task_5 import create_dif_files
+import os
+def create_her_files(*arg, **kwargs):
+    if arg not in os.listdir():
+        os.mkdir(arg)
+    create_dif_files(**kwargs)
