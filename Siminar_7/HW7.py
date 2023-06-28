@@ -23,12 +23,14 @@ import os
 
 def grour_rename(dir_, original_exten, new_name):
     os.chdir(dir_)
-    files = [file for file in os.listdir(os.getcwd()) if os.path.isfile(file) and file.split('.')[1] == original_exten]
+    print(os.getcwd())
+    files = [file for file in os.listdir(os.getcwd()) if os.path.isfile(file)\
+             and file.split('.')[1] == original_exten]
     new_name_file, new_exten = new_name.split('.')
     count = 1
     for file in files:
         os.rename(file, f'{file}_{new_name_file}_{count}.{new_exten}')
         count += 1
 
-
-grour_rename('C:\\Users\\arhip\\OneDrive\\Документы\\GB\\Python2\\PythonSubHW\\Siminar_7\\текст', "txt", "text_file.txt")
+if __name__ == '__main__':
+    grour_rename('C:\\Users\\arhip\\OneDrive\\Документы\\GB\\Python2\\PythonSubHW\\Siminar_7\\текст', "bin", "bin_file.bin")

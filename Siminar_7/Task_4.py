@@ -17,7 +17,7 @@ from string import ascii_letters, digits
 START_INDEX_CHR = 97
 END_INDEX_CHR = 122
 
-def ctreate_file(type_file, min_name=6, max_name=8, min_byte=256, max_byte=4096, count_file=2):
+def ctreate_file(type_file, min_name=6, max_name=8, min_byte=256, max_byte=4096, count_file=0):
 
     for _ in range(count_file):
         len_name_file = randint(min_name, max_name)

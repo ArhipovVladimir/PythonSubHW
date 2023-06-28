@@ -14,5 +14,5 @@ def create_dif_files(**kwargs):
         ctreate_file(ext, count_file=count)
 
 if __name__ == '__main__':
-    create_dif_files(txt=12, bin=41, jpg=18)
+    create_dif_files(txt=20, bin=3, jpg=3)
 
