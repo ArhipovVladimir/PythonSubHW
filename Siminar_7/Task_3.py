@@ -43,10 +43,10 @@ def mult_digit(name, num):
             res_name = f_name.readline()
             if res_mult < 0:
                 res_name = res_name.lower()
-                f_res.write(f'{res_name} {abs(res_mult)}\n')
+                f_res.write(f'{res_name.strip()} {abs(res_mult)}\n')
             elif res_mult > 0:
                 res_name = res_name.upper()
-                f_res.write(f'{res_name} {round(res_mult, 0)}\n')
+                f_res.write(f'{res_name.strip()} {round(res_mult, 0)}\n')
 
             if f_name.tell() == line_name:
                 f_name.seek(0)

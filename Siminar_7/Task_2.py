@@ -23,7 +23,7 @@ def get_name_file(count_name, name):
         str_name = str_name.capitalize()
 
         with open(f'{name}', 'a') as f:
-            f.write(f'{str_name}\n')
+            f.writelines(f'{str_name}\n')
 
 
 if __name__ == '__main__':
