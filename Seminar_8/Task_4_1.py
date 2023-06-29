@@ -24,16 +24,15 @@ def create_csv_json(file_csv, new_json_file):
          open(new_json_file, 'w', encoding='utf-8') as f_json_wrt
     ):
         csv_file = csv.reader(f_cvs_red)
-        dict_res = {}
-        # print(*csv_file)
-        for i, row in enumerate(csv_file):
-            if i != 0:
-                user_id = f'{"0" * (10 - len(row[1]))}{row[1]}'
-                hash_id = str(hash(user_id)) + str(hash(row[2]))
-                dict_res.setdefault(row[0], {user_id: [hash_id, row[1]]})[user_id] = [hash_id, row[2]]
-        print(dict_res)
+        lst = []
+        file = [*csv_file]
+        header_id, header_name, header_acces = file[0]
+        for assecc, id, name in file[1:]:
+            lst.append({header_id: id, header_name:str(name).title(), header_acces:assecc, 'hash': hash(name+id)})
 
-        json.dump(dict_res, f_json_wrt, ensure_ascii=False, indent=1)
+
+
+        json.dump(lst, f_json_wrt, ensure_ascii=False, indent=1)
 
 
 

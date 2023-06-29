@@ -26,6 +26,7 @@ def grour_rename(dir_, original_exten, new_name):
     print(os.getcwd())
     files = [file for file in os.listdir(os.getcwd()) if os.path.isfile(file)\
              and file.split('.')[1] == original_exten]
+    print(files)
     new_name_file, new_exten = new_name.split('.')
     count = 1
     for file in files:
