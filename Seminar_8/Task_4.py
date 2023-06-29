@@ -29,8 +29,8 @@ def create_csv_json(file_csv, new_json_file):
         for i, row in enumerate(csv_file):
             if i != 0:
                 user_id = f'{"0" * (10 - len(row[1]))}{row[1]}'
-                hash_id = str(hash(user_id)) + str(hash(row[2]))
-                dict_res.setdefault(row[0], {user_id: [hash_id, row[1]]})[user_id] = [hash_id, row[2]]
+                hash_id = hash(user_id+(row[2]).title())
+                dict_res.setdefault(row[0], {user_id: [hash_id, row[1]]})[user_id] = [hash_id, row[2].title()]
         print(dict_res)
 
         json.dump(dict_res, f_json_wrt, ensure_ascii=False, indent=1)
@@ -40,4 +40,4 @@ def create_csv_json(file_csv, new_json_file):
 
 
 if __name__ == '__main__':
-    create_csv_json('user_id.csv', 'user_id_add.json')
+    create_csv_json('user_id.csv', 'user_id_add_v1.json')

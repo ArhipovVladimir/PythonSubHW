@@ -20,13 +20,13 @@ def user_add(file_mame):
     file_mame = f'{file_mame}.json'
     print(os.listdir())
     if file_mame in os.listdir():
-        with open(file_mame, 'r') as f1:
+        with open(file_mame, 'r', encoding='utf-8') as f1:
             dict_user = json.load(f1)
     else: dict_user = {}
 
     while True:
         user_name = input('введите имя пользователя')
-        if user_name == 'exit':
+        if not user_name:
             break
         user_id = int(input('введите id'))
         if user_id in dict_user.keys():
@@ -36,7 +36,7 @@ def user_add(file_mame):
         dict_user.setdefault(user_id, [user_name, level_access])
 
     print(dict_user)
-    with open(file_mame, 'a') as f2:
+    with open(file_mame, 'a', encoding='utf-8') as f2:
         json.dump(dict_user, f2, sort_keys=True, ensure_ascii=False)
 
-user_add('user_id')
+user_add('user_id_v1')

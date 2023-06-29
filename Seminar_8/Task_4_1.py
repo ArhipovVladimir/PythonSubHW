@@ -28,14 +28,18 @@ def create_csv_json(file_csv, new_json_file):
         file = [*csv_file]
         header_id, header_name, header_acces = file[0]
         for assecc, id, name in file[1:]:
-            lst.append({header_id: id, header_name:str(name).title(), header_acces:assecc, 'hash': hash(name+id)})
+            # добавдение нолей
+            id = f'{"0" * (10 - len(id))}{id}'
+            # для больших первых букв
+            name = name.title()
+            lst.append({header_id: id, header_name:name, header_acces:assecc, 'hash': hash(name+id)})
 
 
 
         json.dump(lst, f_json_wrt, ensure_ascii=False, indent=1)
 
 
-
+# f'{"0" * (10 - len(id))}{id}'
 
 
 if __name__ == '__main__':
