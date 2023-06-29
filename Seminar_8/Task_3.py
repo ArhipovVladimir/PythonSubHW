@@ -8,7 +8,7 @@ import csv
 import json
 
 
-def create_csv(file_json, file_csv):
+def create_json_csv(file_json, file_csv):
 
     with (open(file_json, 'r', encoding='utf-8') as f_read,
           open(file_csv, 'w', encoding='utf-8', newline='')as f_write):
@@ -26,17 +26,5 @@ def create_csv(file_json, file_csv):
 
     # print(dict_user)
 
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
-    create_csv('user_id.json', 'user_id.csv')
+    create_json_csv('user_id.json', 'user_id.csv')

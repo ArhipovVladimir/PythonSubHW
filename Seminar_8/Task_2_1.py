@@ -16,7 +16,7 @@ import json
 import os
 
 
-def user_add(file_mame):
+def user_add_json(file_mame):
     file_mame = f'{file_mame}.json'
     print(os.listdir())
     if file_mame in os.listdir():
@@ -42,4 +42,4 @@ def user_add(file_mame):
 
 
 if __name__ == '__main__':
-    user_add('user_id')
+    user_add_json('user_id')
