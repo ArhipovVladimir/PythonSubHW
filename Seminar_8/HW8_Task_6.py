@@ -7,7 +7,7 @@ import csv
 
 def conv_pickle_csv(file_pickle):
     with(open(file_pickle, 'rb') as f_pickle,
-         open(file_pickle.strip('pickle') + '.csv', 'w', encoding='utf-8', newline='') as f_csv):
+         open(file_pickle.strip('.pickle') + '.csv', 'w', encoding='utf-8', newline='') as f_csv):
 
         dict_pickle = pickle.load(f_pickle)
         csv_write = csv.DictWriter(f_csv, fieldnames=list(dict_pickle[0].keys()))
@@ -20,11 +20,6 @@ def conv_pickle_csv(file_pickle):
             all_data.append(str_data)
         # print(all_data)
         csv_write.writerows(all_data)
-
-
-
-
-
 
 
 if __name__ == '__main__':
