@@ -26,8 +26,10 @@ def create_csv_json(file_csv, new_json_file):
         csv_file = csv.reader(f_cvs_red)
         lst = []
         file = [*csv_file]
-        header_id, header_name, header_acces = file[0]
+        header_acces, header_id, header_name = file[0]
+        # print(header_acces, header_id, header_name)
         for assecc, id, name in file[1:]:
+            # print(assecc, id, name)
             # добавдение нолей
             id = f'{"0" * (10 - len(id))}{id}'
             # для больших первых букв
