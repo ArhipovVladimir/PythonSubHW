@@ -18,7 +18,7 @@ def conv_pickle_csv(file_pickle):
             for key, value in line.items():
                 str_data.setdefault(key, value)
             all_data.append(str_data)
-        print(all_data)
+        # print(all_data)
         csv_write.writerows(all_data)
 
 
