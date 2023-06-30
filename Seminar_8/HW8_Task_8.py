@@ -11,7 +11,7 @@
 import json
 import os
 import pickle
-import sys
+
 
 
 def walk_write(dir_):
@@ -19,26 +19,36 @@ def walk_write(dir_):
     for patch_, dir_names, file_names in os.walk(dir_):
         # print(patch_, dir_names, file_names )
         dict_dir_file = {}
-        if len(dir_names) != 0:
+        # if len(dir_names) == 0 or len(file_names) == 0:
 
-            for dir_name in dir_names:
-                dict_dir_file.setdefault("dir", {dir_name}).add(dir_name)
+        for dir_name in dir_names:
+            # if dir_name not in dict_dir_file.values():
                 dict_dir_file.setdefault("patch", {patch_}).add(patch_)
+                dict_dir_file.setdefault("dir", {dir_name}).add(dir_name)
 
-        if len(file_names) != 0:
-            for file_name in file_names:
+
+        # if len(dir_names) != 0 or len(file_names) != 0:
+        res_size = 0
+        for file_name in file_names:
+            # if file_name in dict_dir_file.values():
+                dict_dir_file.setdefault("patch", {patch_}).add(patch_)
                 dict_dir_file.setdefault("File", {file_name}).add(file_name)
                 dict_dir_file.setdefault("size", {os.path.getsize(os.path.join(patch_, file_name))})\
                     .add(os.path.getsize(os.path.join(patch_, file_name)))
-                dict_dir_file.setdefault("patch", {patch_}).add(patch_)
+                res_size = res_size + os.path.getsize(os.path.join(patch_, file_name))
+        dict_dir_file.setdefault('Tolal_size', res_size)
 
-        # print(dict_dir_file)
+        print(dict_dir_file)
+
+    for patch_, dir_names, file_names in os.walk(dir_):
+        print(patch_, dir_names, file_names )
+        # print(len(patch_), len(dir_names), len(file_names))
 
     with(
         open('dict_dir_file.json', 'w', encoding='utf-8') as f_json,
         open('dict_dir_file.pickle', 'wb') as f_pic,
     ):
-        # json.dump(dict_dir_file, f_json)
+        # json.dump(dict_dir_file, f_json, ensure_ascii=False)
         pickle.dump(dict_dir_file, f_pic)
 
 
