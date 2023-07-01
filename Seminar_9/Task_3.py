@@ -14,7 +14,7 @@ import os
 from typing import Callable
 
 
-def deco(func):
+def save_json(func):
 
     def wrapper(num, *arg, **kwargs):
         filemame = f'{func.__name__}.json'
@@ -34,7 +34,7 @@ def deco(func):
     return wrapper
 
 
-@deco
+@save_json
 def get_sum(num, *arg, **kwargs):
     return num
 

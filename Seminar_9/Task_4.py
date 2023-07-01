@@ -5,24 +5,25 @@
 функции.
 
 """
+COUNT = 3
 
-def param(count):
+def count_statr(count):
     def deco(func):
         res_list = []
         def wrapper(*args):
             for _ in range(count):
-                res_list.append(func(args))
-            return res_list
+                res_list.append(func(*args))
+
         return wrapper
     return deco
 
-@param(5)
+
+@count_statr(3)
 def my_func(*args):
     return args
 
 
 
 if __name__ == '__main__':
-
-    print(my_func('привет'))
+    my_func('пот')
 

@@ -42,7 +42,7 @@ def funk_round(digit, level):
 
             else:
                 print(f'правильно компьютер загадывал {num}')
-                return True
+                return att
 
         else:
             print(f' колическо попыток ичерпано - компьютер загадывал {digit}')
