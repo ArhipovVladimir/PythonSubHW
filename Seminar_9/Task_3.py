@@ -12,10 +12,10 @@ json словаря.
 import json
 import os
 from typing import Callable
-
+from functools import wraps
 
 def save_json(func):
-
+    @wraps(func)
     def wrapper(num, *arg, **kwargs):
         filemame = f'{func.__name__}.json'
         print(filemame)

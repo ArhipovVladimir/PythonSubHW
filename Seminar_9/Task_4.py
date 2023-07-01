@@ -6,10 +6,12 @@
 
 """
 COUNT = 3
+from functools import wraps
 
 def count_statr(count):
     def deco(func):
         res_list = []
+        @wraps(func)
         def wrapper(*args):
             for _ in range(count):
                 res_list.append(func(*args))

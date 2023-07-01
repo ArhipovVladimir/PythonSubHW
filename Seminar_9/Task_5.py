@@ -7,6 +7,10 @@
 ○ декоратором для многократного запуска.
 Выберите верный порядок декораторов.
 
+Задание №6
+Доработайте прошлую задачу добавив декоратор wraps в
+каждый из декораторов.
+
 """
 
 from Task_2 import funk_round
@@ -15,7 +19,7 @@ from Task_3 import save_json
 from Task_4 import count_statr
 
 
-@count_statr(5)
+@count_statr(2)
 @save_json
 @verif
 def funk_start(*args):

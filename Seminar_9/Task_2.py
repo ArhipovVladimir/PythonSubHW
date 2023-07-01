@@ -8,9 +8,11 @@
 
 from typing import Callable
 from random import randint
+from functools import wraps
 
 
 def verif(funk):
+    @wraps(funk)
     def wrapper(digit, level):
 
         if not 1 <= digit <= 100:
