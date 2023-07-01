@@ -24,34 +24,39 @@ def verif(funk):
 
     return wrapper
 
-@verif
+
+# @verif
 def funk_round(digit, level):
-        att = 0
-        while att < level:
-            print(f'Веедите число между {1} и {100} у Вас {level} попыток')
-            num = int(input())
-            att += 1
-            if num < 1 or num > 100:
-                print(f'Число {num} не в границах интервала {1} {100}')
+    att = 0
+    while att < level:
+        print(f'Веедите число между {1} и {100} у Вас {level} попыток')
+        num = int(input())
+        att += 1
+        if num < 1 or num > 100:
+            print(f'Число {num} не в границах интервала {1} {100}')
 
-            elif num < digit:
-                print(f'Число {num} меньше загаданного')
+        elif num < digit:
+            print(f'Число {num} меньше загаданного')
 
-            elif num > digit:
-                print(f'Число {num} больше загаданного')
-
-            else:
-                print(f'правильно компьютер загадывал {num}')
-                return True
+        elif num > digit:
+            print(f'Число {num} больше загаданного')
 
         else:
-            print(f' колическо попыток ичерпано - компьютер загадывал {digit}')
-            return False
+            print(f'правильно компьютер загадывал {num}')
+            return True
 
+    else:
+        print(f' колическо попыток ичерпано - компьютер загадывал {digit}')
+        return False
 
 
 if __name__ == '__main__':
-    funk_round(15, 5)
+    number = 5
+    attc = 9
+    print(funk_round.__name__)
+    funk_round = verif(funk_round)
+    print(funk_round.__name__)
+    funk_round(number, attc)
 
 
 
