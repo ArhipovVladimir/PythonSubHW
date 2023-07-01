@@ -1,13 +1,31 @@
 """Задание №2
 Дорабатываем задачу 1.
 Превратите внешнюю функцию в декоратор.
-Он должен проверять входят ли переданные в функциюугадайку числа в диапазоны [1, 100] и [1, 10].
+Он должен проверять входят ли переданные в
+функциюугадайку числа в диапазоны [1, 100] и [1, 10].
 Если не входят, вызывать функцию со случайными числами
 из диапазонов."""
 
-def funk_close(digit, level):
-    def funk_round():
-        # digit = random.randint(min_lim, max_lim)
+from typing import Callable
+from random import randint
+
+
+def verif(funk):
+    def wrapper(digit, level):
+
+        if not 1 <= digit <= 100:
+            digit = randint(1, 100)
+            print('будут использованны случайные числа угадывания')
+        if not 1 <= level <= 10:
+            level = randint(1, 10)
+            print('будут использованны случайные числа попыток')
+
+        return funk(digit, level)
+
+    return wrapper
+
+@verif
+def funk_round(digit, level):
         att = 0
         while att < level:
             print(f'Веедите число между {1} и {100} у Вас {level} попыток')
@@ -29,8 +47,10 @@ def funk_close(digit, level):
         else:
             print(f' колическо попыток ичерпано - компьютер загадывал {digit}')
             return False
-    return funk_round
+
+
+
 
 if __name__ == '__main__':
-    res = funk_close(15, 10)
-    res()
+    funk_round(15, 5)
+
