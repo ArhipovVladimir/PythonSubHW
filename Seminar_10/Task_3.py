@@ -10,3 +10,29 @@
 """
 
 class Human:
+
+    def __init__(self, name, surname, patranomic, age):
+        self.name = name
+        self.surname = surname
+        self.patranomic = patranomic
+        self.__age = age
+
+    def full_name(self):
+        return f'{self.name} {self.surname} {self.patranomic}'
+
+    def birthday(self):
+        self.__age += 1
+
+    def get_age(self):
+        return self.__age
+
+if __name__ == '__main__':
+
+    h1 = Human('Ivan', 'Petrov', 'Sidorovich', 25)
+    print(h1.full_name())
+    print(h1.get_age())
+    h1.birthday()
+    print(h1.get_age())
+    h1.__age = 33
+    print(h1.__age)
+
