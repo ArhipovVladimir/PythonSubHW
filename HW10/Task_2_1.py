@@ -13,7 +13,7 @@ import csv
 class conv_pickle_csv:
 
     def __init__(self, file_pickle):
-        self.file_pickle=file_pickle
+        self.file_pickle = file_pickle
 
     def conv(self):
 
