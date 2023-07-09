@@ -15,17 +15,17 @@ class Person(Human):
 
     GET = 7
     def __init__(self, *args, **kwargs):
-        
-        def get_id_num(self):
+
+
+        def _get_id_num(self):
             return randint(100000, 999999)
 
-        def get_access(self):
-            return sum(map(int, str(self.id_num))) % 7
+        def _get_access(self):
+            return sum(map(int, str(self.id_num))) % self.GET
 
-
+        self.id_num = _get_id_num(self)
+        self.access = _get_access(self)
         super().__init__(*args, **kwargs)
-        self.id_num = get_id_num
-        self.access = get_access(self)
 
 
 if __name__ == '__main__':
