@@ -10,14 +10,15 @@ from Task_1_Class import Fish
 from Task_1_Class import Brids
 from Task_1_Class import Manals
 
+
 class Get_class:
 
     def __init__(self, type_cls, *args, **kwargs):
         self.type_cls = type_cls
 
-
     def get_amimals(self):
-        if self.type_cls == 'fish':
+
+        if 'fish' in self.type_cls:
             return Fish(self)
 
         if self.type_cls == 'Brids':
@@ -28,7 +29,11 @@ class Get_class:
 
         print("не найден тип")
 
+
 if __name__ == '__main__':
-    animals1 = Get_class("Fish", 55)
-    animals1.specif()
-    animals1.name()
+    animals1 = Get_class.get_amimals('fish')
+    # animals2 = Fish('fish', 55)
+    # print(animals1)
+    # print(animals2)
+    # animals1.specif()
+    # animals1.name()
