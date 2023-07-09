@@ -5,66 +5,30 @@
 переданного типа и верните его из класса-фабрики.
 
 """
-class Animal:
-    def __init__(self, name):
-        self.name = name
 
-    def get_mame(self):
-        return self.name
+from Task_1_Class import Fish
+from Task_1_Class import Brids
+from Task_1_Class import Manals
 
-class Fish:
+class Get_class:
 
-    def __init__(self, subm, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.subm = subm
+    def __init__(self, type_cls, *args, **kwargs):
+        self.type_cls = type_cls
 
-    def specif(self):
-        if self.subm < 10:
-            print("медлководная")
-        if 10 < self.subm < 50:
-            print("средневодная")
-        if self.subm > 50:
-            print("губоководная")
 
-class Brids(Animal):
+    def get_amimals(self):
+        if self.type_cls == 'fish':
+            return Fish(self)
 
-    def __init__(self, wingspan, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            self.wingspan = wingspan
+        if self.type_cls == 'Brids':
+            return Brids(self)
 
-    def specif(self):
-        print(self.wingspan / 2)
+        if self.type_cls == 'Manals':
+            return Manals(self)
 
-class Manals(Animal):
-
-    def __init__(self, monat, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.monat = monat
-
-    def _chec_monat(self):
-        self.monat = min(12, self.monat)
-
-    def specif(self):
-        if self.monat < 12:
-            print('не спит зимой')
-        else:
-            print('спит зимой')
+        print("не найден тип")
 
 if __name__ == '__main__':
-    f1 = Fish('карась', 15)
-    f2 = Fish('кит', 120)
-
-    b1 = Brids('Воробой', 10)
-    b2 = Brids('Сова', 15)
-
-    m1 = Manals('bar', 8)
-    m2 = Manals('Lion', 12)
-
-    f2.specif()
-    f1.specif()
-    b1.specif()
-    b2.specif()
-    m1.specif()
-    m2.specif()
-    print(f1.name)
-    print(f2.name)
+    animals1 = Get_class("Fish", 55)
+    animals1.specif()
+    animals1.name()
