@@ -14,7 +14,7 @@ class Animal:
     def get_mame(self):
         return self.name
 
-class Fish:
+class Fish(Animal):
 
     def __init__(self, subm, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -53,8 +53,8 @@ class Manals(Animal):
             print('спит зимой')
 
 if __name__ == '__main__':
-    f1 = Fish('карась', 15)
-    f2 = Fish('кит', 120)
+    f1 = Fish(15, 'карась')
+    f2 = Fish(120, 'кит')
 
     b1 = Brids('Воробой', 10)
     b2 = Brids('Сова', 15)
@@ -62,11 +62,8 @@ if __name__ == '__main__':
     m1 = Manals('bar', 8)
     m2 = Manals('Lion', 12)
 
-    f2.specif()
-    f1.specif()
-    b1.specif()
-    b2.specif()
-    m1.specif()
-    m2.specif()
+
     print(f1.name)
     print(f2.name)
+    print(f1.specif())
+    print(f2.specif())

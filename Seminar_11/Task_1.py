@@ -17,16 +17,14 @@ class My_str(str):
         intance.date_gen = time.time()
         return intance
 
-    def __init__(self, text, autor):
-        self.text = text
-        self.autor = autor
 
-
-    def __str__(self):
-         return f'{self.text} автор - {self.autor} написал в {self.date_gen}'
 
 
 if __name__ == '__main__':
 
     m_str = My_str("Я сказал так ", "Архипов ВС")
     print(m_str)
+    print(m_str.upper())
+    print(m_str.lower())
+    print(m_str.autor)
+    print(m_str.date_gen)
