@@ -34,6 +34,22 @@ class Matrix:
             list_matrix.append(list_line)
         return Matrix(list_matrix)
 
+    def __le__(self, other):
+        """__le__ Matrix"""
+
+        if len(self.mat) != len(other.mat):
+            print('сравнение невозможно')
+            return self
+
+
+        for i in range(len(self.mat)):
+            list_line = []
+            for j in range(len(self.mat[i])):
+                if self.mat[i][j] - other.mat[i][j] < 0:
+                    return False
+        return True
+
+
     def __mul__(self, other):
         """__mull__ Matrix"""
 
@@ -64,4 +80,5 @@ if __name__ == '__main__':
     print(f'{m3 = }')
     m4 = m1 * m2
     print(f'{m4 = }')
+    print(m1 >= m2)
 
