@@ -25,13 +25,17 @@ class Qaudr:
         return self.line * self.hegt
 
     def __add__(self, other):
-        line = self.perim()
-        hegt = other.perim()
+        perim_sum = self.perim() + other.perim()
+        line = max(self.line, self.hegt, other.line, other.hegt)
+        hegt = perim_sum // 2 - line
         return Qaudr(line, hegt)
 
     def __sub__(self, other):
-        line = self.perim()
-        hegt = other.perim()
+        if self.perim() < other.perim():
+            return self
+        perim_sub = self.perim() - other.perim()
+        line = min(self.line, self.hegt, other.line, other.hegt)
+        hegt = perim_sub // 2 - line
         return Qaudr(line, hegt)
 
     def __str__(self):
@@ -44,9 +48,14 @@ if __name__ == '__main__':
     q1 = Qaudr(20, 5)
     q2 = Qaudr(5, 3)
     q3 = q1 + q2
+    q4 = q1 - q2
+    q5 = q2 - q1
     print(q1)
     print(q2)
     print(q3)
+    print(q4)
     print(q1.perim())
     print(q2.perim())
     print(q3.perim())
+    print(q4.perim())
+    print(q5.perim())
