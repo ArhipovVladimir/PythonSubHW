@@ -7,6 +7,7 @@
 
 
 class Qaudr:
+    """class QUADR"""
 
     def __init__(self, line, hegt=None):
         if hegt == None:
@@ -22,12 +23,16 @@ class Qaudr:
         return self.line * self.hegt
 
     def __add__(self, other):
+        """add merthod class Quadr"""
+
         perim_sum = self.perim() + other.perim()
         line = max(self.line, self.hegt, other.line, other.hegt)
         hegt = perim_sum // 2 - line
         return Qaudr(line, hegt)
 
     def __sub__(self, other):
+        """sub merthod class Quadr"""
+
         if self.perim() < other.perim():
             return self
         perim_sub = self.perim() - other.perim()
@@ -36,18 +41,22 @@ class Qaudr:
         return Qaudr(line, hegt)
 
     def __eq__(self, other):
+        """__eq__ method class Quadr"""
+
         return self.perim() == other.perim()
 
     def __gt__(self, other):
+        """__qt__ method class Quadr"""
+
         return self.perim() > other.perim()
 
     def __lt__(self, other):
+        """__lt__ method class Quadr"""
         return self.perim() < other.perim()
 
     def __str__(self):
-        return f'длинна {self.line} ширина {self.hegt}'
 
-
+         return f'длинна {self.line} ширина {self.hegt}'
 
 
 if __name__ == '__main__':
