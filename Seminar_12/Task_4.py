@@ -85,7 +85,7 @@ class Qaudr:
 
 
 if __name__ == '__main__':
-    q1 = Qaudr(20, 5)
+    q1 = Qaudr(20)
     print(q1)
     q2 = Qaudr(12, 3)
     q3 = Qaudr(5, 3)
@@ -97,6 +97,6 @@ if __name__ == '__main__':
     print(q3 == q2)
     print(q1 != q2)
     print(q4)
-    print(q4.__slots__)
+    # print(q4.__slots__)
     q4.size = 3
     print(q4)
