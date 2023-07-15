@@ -12,19 +12,23 @@
 from collections import defaultdict
 from math import factorial
 class Factorial:
-    def __init__(self):
-        self.storage = defaultdict(list)
+    def __init__(self, k):
+        self.k = k
+        self._histoty = []
 
-    def __str__(self):
-        results = '\n'.join((f'{k}: {v}' for k, v in self.storage.items()))
-        return results
+    def __call__(self, num):
+        self._histoty.append({num: factorial(num)})
+        self._histoty = self._histoty[-self.k:]
+        return factorial(num)
 
-    def __call__(self, value):
-        self.storage[value].append(factorial(value))
+    def get_history(self):
+        return self._histoty
+
 
 
 if __name__ == '__main__':
-     f1 = Factorial()
-     print(f1(5))
-     print(f1(12))
-    # print(factorial(5))
+     f = Factorial(3)
+     for i in range(3, 10):
+         print(f(i))
+
+     print(f.get_history())
