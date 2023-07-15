@@ -6,3 +6,33 @@
 Если переданы два параметра, считаем step=1.
 Если передан один параметр, также считаем start=1.
 """
+
+from math import factorial
+class GenFacrorial:
+    """GenIter"""
+
+    def __init__(self, start, stop=None, step=None):
+        self.start = start
+        self.stop = stop
+        self.step = step
+        if self.step is None:
+            self.step = 1
+        if self.stop is None:
+            self.stop = self.start
+            self.start = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        while self.start <= self.stop:
+            res = factorial(self.start)
+            self.start += self.step
+            return res
+        raise StopIteration
+
+
+if __name__ == '__main__':
+    gen = GenFacrorial(7)
+    for f in gen:
+        print(f)

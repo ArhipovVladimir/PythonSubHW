@@ -9,7 +9,7 @@
 
 """
 
-from collections import defaultdict
+
 from math import factorial
 class Factorial:
     def __init__(self, k):
