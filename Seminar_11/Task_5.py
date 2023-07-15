@@ -26,7 +26,7 @@ class Qaudr:
 
     def __add__(self, other):
         perim_sum = self.perim() + other.perim()
-        line = max(self.line, self.hegt, other.line, other.hegt)
+        line = max(self.line, self.hegt, other.line, other._hegt)
         hegt = perim_sum // 2 - line
         return Qaudr(line, hegt)
 
@@ -34,7 +34,7 @@ class Qaudr:
         if self.perim() < other.perim():
             return self
         perim_sub = self.perim() - other.perim()
-        line = min(self.line, self.hegt, other.line, other.hegt)
+        line = min(self.line, self.hegt, other.line, other._hegt)
         hegt = perim_sub // 2 - line
         return Qaudr(line, hegt)
 
