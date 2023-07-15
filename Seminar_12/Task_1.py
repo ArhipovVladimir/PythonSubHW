@@ -16,7 +16,7 @@ class Factorial:
         self.storage = defaultdict(list)
 
     def __str__(self):
-        results = '\n'.join(f'{k}: {v}' for k, v in self.storage.items())
+        results = '\n'.join((f'{k}: {v}' for k, v in self.storage.items()))
         return results
 
     def __call__(self, value):
@@ -24,5 +24,7 @@ class Factorial:
 
 
 if __name__ == '__main__':
-    f1 = Factorial
-    print(f1(5))
+     f1 = Factorial()
+     print(f1(5))
+     print(f1(12))
+    # print(factorial(5))
