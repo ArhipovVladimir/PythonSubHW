@@ -7,7 +7,7 @@
 
 class Qaudr:
     """class QUADR"""
-    # __slots__ = ('_line', '_hegt')
+    __slots__ = ('_line', '_hegt')
 
     def __init__(self, line, hegt=None):
         if hegt == None:
@@ -26,7 +26,7 @@ class Qaudr:
         """add merthod class Quadr"""
 
         perim_sum = self.perim() + other.perim()
-        line = max(self._line, self._hegt, other.line, other._hegt)
+        line = max(self._line, self._hegt, other.line, other.wegth)
         hegt = perim_sum // 2 - line
         return Qaudr(line, hegt)
 
@@ -36,7 +36,7 @@ class Qaudr:
         if self.perim() < other.perim():
             return self
         perim_sub = self.perim() - other.perim()
-        line = min(self._line, self._hegt, other.line, other._hegt)
+        line = min(self._line, self._hegt, other.line, other.wegth)
         hegt = perim_sub // 2 - line
         return Qaudr(line, hegt)
 
@@ -97,6 +97,6 @@ if __name__ == '__main__':
     print(q3 == q2)
     print(q1 != q2)
     print(q4)
-    # print(q4.__slots__)
-    q4.size = 3
+    print(q4.__slots__)
+    # q4.size = 3
     print(q4)
