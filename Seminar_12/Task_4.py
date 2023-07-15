@@ -67,15 +67,15 @@ class Qaudr:
 
     @line.setter
     def line(self, value):
-        if self._line > 0:
+        if value > 0:
             self._line = value
         else:
-            raise ValueError(f'ошибка {self._line}')
+            raise ValueError(f'ошибка {value}')
 
 
     @hegt.setter
     def hegt(self, value):
-        if self._hegt > 0:
+        if value > 0:
             self._hegt = value
         else:
             raise ValueError (f'ошибка {self._hegt}')
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     print(q1)
     q2 = Qaudr(12, 3)
     q3 = Qaudr(5, 3)
-    q1.line = -1
+    q1.line = 1
     print(q1)
     q4 = q1 + q3
     print(q1 < q2)
