@@ -69,10 +69,16 @@ class Qaudr:
     def line(self, value):
         if self._line > 0:
             self._line = value
+        else:
+            raise ValueError(f'ошибка {self._line}')
+
+
     @hegt.setter
     def hegt(self, value):
         if self._hegt > 0:
             self._hegt = value
+        else:
+            raise ValueError (f'ошибка {self._hegt}')
 
 
 
@@ -91,3 +97,4 @@ if __name__ == '__main__':
     print(q3 == q2)
     print(q1 != q2)
     print(q4)
+    print(q4.__dict__)
