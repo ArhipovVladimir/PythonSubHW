@@ -89,7 +89,7 @@ if __name__ == '__main__':
     print(q1)
     q2 = Qaudr(12, 3)
     q3 = Qaudr(5, 3)
-    q1.line = 1
+    q1.line = -1
     print(q1)
     q4 = q1 + q3
     print(q1 < q2)
