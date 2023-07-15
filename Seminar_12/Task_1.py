@@ -13,12 +13,12 @@ from collections import defaultdict
 from math import factorial
 class Factorial:
     def __init__(self, k):
-        self.k = k
+        self._k = k
         self._histoty = []
 
     def __call__(self, num):
         self._histoty.append({num: factorial(num)})
-        self._histoty = self._histoty[-self.k:]
+        self._histoty = self._histoty[-self._k:]
         return factorial(num)
 
     def get_history(self):
