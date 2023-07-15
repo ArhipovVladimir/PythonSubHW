@@ -7,7 +7,7 @@
 
 class Qaudr:
     """class QUADR"""
-    __slots__ = ('_line', '_hegt')
+    # __slots__ = ('_line', '_hegt')
 
     def __init__(self, line, hegt=None):
         if hegt == None:
@@ -97,4 +97,6 @@ if __name__ == '__main__':
     print(q3 == q2)
     print(q1 != q2)
     print(q4)
-    print(q4.__dict__)
+    print(q4.__slots__)
+    q4.size = 3
+    print(q4)
