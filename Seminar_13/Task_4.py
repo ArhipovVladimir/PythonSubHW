@@ -20,9 +20,7 @@ class User:
         self.level = level
 
     def __eq__(self, other):
-        return self.user_id == other.user_id and \
-            self.user == other.user and \
-            self.level == other.level
+        return self.user_id == other.user_id and self.user == other.user
 
     def __str__(self):
         return f'польз {self.user} id {self.user_id} уровень {self.level}'
