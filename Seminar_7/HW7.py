@@ -34,4 +34,4 @@ def grour_rename(dir_, original_exten, new_name):
         count += 1
 
 if __name__ == '__main__':
-    grour_rename('C:\\Users\\arhip\\OneDrive\\Документы\\GB\\Python2\\PythonSubHW\\Siminar_7\\текст', "bin", "bin_file.bin")
+    grour_rename('/Seminar_7\\текст', "bin", "bin_file.bin")

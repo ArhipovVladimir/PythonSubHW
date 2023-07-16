@@ -25,4 +25,4 @@ def create_json(patch_file):
 
 
 if __name__ == '__main__':
-    create_json('C:\\Users\\arhip\\OneDrive\\Документы\\GB\\Python2\\PythonSubHW\\Siminar_7\\result.txt')
+    create_json('/Seminar_7\\result.txt')
