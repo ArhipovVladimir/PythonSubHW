@@ -36,7 +36,7 @@ def user_add_json(file_mame):
 
         dict_user.setdefault(access, {user_id: user_name})[user_id] = user_name
 
-    with open(file_mame, 'w', encoding='utf-8') as f2:
+    with open(file_mame, 'r', encoding='utf-8') as f2:
         json.dump(dict_user, f2, ensure_ascii=False)
 
 
