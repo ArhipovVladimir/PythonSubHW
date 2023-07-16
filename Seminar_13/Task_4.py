@@ -24,6 +24,9 @@ class User:
             self.user == other.user and \
             self.level == other.level
 
+    def __str__(self):
+        return f'польз {self.user} id {self.user_id} уровень {self.level}'
+
 
 if __name__ == '__main__':
     u1 = User("1", "Владимир", "1")
@@ -31,3 +34,4 @@ if __name__ == '__main__':
     u3 = User("4", "Никита", "1")
     print(u1 == u2)
     print(u3 == u2)
+    print(u1, u2, u3, sep='\n')
