@@ -14,7 +14,7 @@
 """
 class User:
 
-    def __init__(self, user_di, user, level):
+    def __init__(self, user_di, user, level=None):
         self.user_id = user_di
         self.user = user
         self.level = level
