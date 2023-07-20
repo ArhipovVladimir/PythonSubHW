@@ -17,7 +17,7 @@ class LevelError(UserException):
         self.value = value
 
     def __str__(self):
-        return f'ошибка уровня доступа {self.value}'
+        return f'ошибка уровня доступа {self.value} либо вход не выполнен'
 
 
 class AccessError(UserException):

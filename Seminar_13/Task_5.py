@@ -40,8 +40,9 @@ class Project:
 
             return Project(list_user)
 
-    def enter(self):
-        user_name, id_user = input('введите имя пользователя и id').split(" ")
+    # вхид в систему
+    def enter(self, user_name, id_user):
+        # user_name, id_user = input('введите имя пользователя и id').split(" ")
         user_new = User(user_name, id_user)
         # print(user)
         if user_new not in self.list_user:
@@ -51,8 +52,15 @@ class Project:
              if user == user_new:
                 self.admim_project = user
 
-    # def add_user
+    # добавление пользовалеля
+    def add_user(self, user, user_id, level):
+        # print((level))
+        # print(self.admim_project.level)
+        if int(self.admim_project.level) > int(level):
+            raise LevelError(user)
+        self.list_user.append(User(user, user_id, level))
 
+    # self.admim_project == None or
     def __str__(self):
         return f'пользователи {self.list_user} админ {self.admim_project}'
 
@@ -60,7 +68,10 @@ class Project:
 
 if __name__ == '__main__':
     p = Project.load_json('user_id.json')
-    # print(p)
-    p.enter()
     print(p)
-
+    p.enter('Федор', '3')
+    print(p)
+    p.add_user('Степан', '7', '7')
+    print(p)
+    # p.add_user('Илья', '8', '1')
+    print(p)
