@@ -68,10 +68,10 @@ class Project:
 
 if __name__ == '__main__':
     p = Project.load_json('user_id.json')
-    print(p)
+    print(*p.list_user)
     p.enter('Федор', '3')
-    print(p)
+    print(*p.list_user)
     p.add_user('Степан', '7', '7')
-    print(p)
+    print(*p.list_user)
     # p.add_user('Илья', '8', '1')
-    print(p)
+    print(*p.list_user)
