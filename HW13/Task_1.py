@@ -50,8 +50,7 @@ def user_add(file_mame):
             print(f'не число ошибка {e}')
             continue
 
-        dict_user.setdefault(level_access, {user_id: user_name})[user_id] = user_name
-        # dict_user.setdefault(level_access, [user_id, user_name])
+        dict_user.setdefault(str(level_access), {user_id: user_name})[user_id] = user_name
 
     print(dict_user)
     with open(file_mame, 'w', encoding='utf-8') as f2:
