@@ -50,10 +50,11 @@ def user_add(file_mame):
             print(f'не число ошибка {e}')
             continue
 
-        dict_user.setdefault(user_id, [user_name, level_access])
+        dict_user.setdefault(level_access, {user_id: user_name})[user_id] = user_name
+        # dict_user.setdefault(level_access, [user_id, user_name])
 
     print(dict_user)
-    with open(file_mame, 'a', encoding='utf-8') as f2:
-        json.dump(dict_user, f2, sort_keys=True, ensure_ascii=False)
+    with open(file_mame, 'w', encoding='utf-8') as f2:
+        json.dump(dict_user, f2, ensure_ascii=False)
 
 user_add('user_id_v1')
