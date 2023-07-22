@@ -61,8 +61,29 @@ class Project:
         self.list_user.append(User(user, user_id, level))
 
     # self.admim_project == None or
+
+    # сохранение пользователей в фаил
+    def save_user(self, file_mame):
+        dict_user = {}
+
+        for item in self.list_user:
+
+
+
+
+            dict_user.setdefault(access, {user_id: user_name})[user_id] = user_name
+
+            with open(file_mame, 'w', encoding='utf-8') as f2:
+                 json.dump(dict_user, f2, ensure_ascii=False)
+
+
+
     def __str__(self):
         return f'пользователи {self.list_user} админ {self.admim_project}'
+
+
+
+
 
 
 
@@ -70,8 +91,8 @@ if __name__ == '__main__':
     p = Project.load_json('user_id.json')
     print(*p.list_user)
     p.enter('Федор', '3')
-    print(*p.list_user)
+    print(p.admim_project)
     p.add_user('Степан', '7', '7')
     print(*p.list_user)
-    # p.add_user('Илья', '8', '1')
+    p.add_user('Илья', '8', '1')
     print(*p.list_user)
