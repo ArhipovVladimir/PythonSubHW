@@ -67,14 +67,10 @@ class Project:
         dict_user = {}
 
         for item in self.list_user:
+            dict_user.setdefault(item.level, {item.user_id: item.user})[item.user_id] = item.user
 
-
-
-
-            dict_user.setdefault(access, {user_id: user_name})[user_id] = user_name
-
-            with open(file_mame, 'w', encoding='utf-8') as f2:
-                 json.dump(dict_user, f2, ensure_ascii=False)
+        with open(file_mame, 'w', encoding='utf-8') as f2:
+              json.dump(dict_user, f2, sort_keys=True, indent=2, ensure_ascii=False)
 
 
 
@@ -89,10 +85,13 @@ class Project:
 
 if __name__ == '__main__':
     p = Project.load_json('user_id.json')
-    print(*p.list_user)
+    # print(*p.list_user)
     p.enter('Федор', '3')
-    print(p.admim_project)
+    p.save_user('user_id.json')
+    # print(p.admim_project)
     p.add_user('Степан', '7', '7')
-    print(*p.list_user)
-    p.add_user('Илья', '8', '1')
-    print(*p.list_user)
+    p.add_user('Дермидонт', '8', '5')
+    p.save_user('user_id.json')
+    # print(*p.list_user)
+    # p.add_user('Илья', '8', '1')
+    # print(*p.list_user)
