@@ -20,7 +20,7 @@
 import json
 
 from Task_4 import User
-from Task_3 import AccessError, LevelError
+from Task_3 import AccessError, LevelError, LevelNoIndetn
 
 class Project:
 
@@ -54,10 +54,11 @@ class Project:
 
     # добавление пользовалеля
     def add_user(self, user, user_id, level):
-        # print((level))
-        # print(self.admim_project.level)
+
         if int(self.admim_project.level) > int(level):
             raise LevelError(user)
+        if int(level) > 7:
+            raise LevelNoIndetn(level)
         self.list_user.append(User(user, user_id, level))
 
     # self.admim_project == None or
@@ -72,15 +73,8 @@ class Project:
         with open(file_mame, 'w', encoding='utf-8') as f2:
               json.dump(dict_user, f2, sort_keys=True, indent=2, ensure_ascii=False)
 
-
-
     def __str__(self):
         return f'пользователи {self.list_user} админ {self.admim_project}'
-
-
-
-
-
 
 
 if __name__ == '__main__':
@@ -92,6 +86,6 @@ if __name__ == '__main__':
     p.add_user('Степан', '7', '7')
     p.add_user('Дермидонт', '8', '5')
     p.save_user('user_id.json')
-    # print(*p.list_user)
+    print(*p.list_user, sep='\n')
     # p.add_user('Илья', '8', '1')
     # print(*p.list_user)
