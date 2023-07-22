@@ -25,18 +25,6 @@ class User:
     def __str__(self):
         return f'польз {self.user} id {self.user_id} уровень {self.level}'
 
-    # def __iter__(self):
-    #     return self
-    #
-    # def __next__(self):
-    #         return self
-
-        # raise StopIteration
-
-
-
-
-
 if __name__ == '__main__':
     u1 = User("1", "Владимир", "1")
     u2 = User("4", "Никита", "1")
