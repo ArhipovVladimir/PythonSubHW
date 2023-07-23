@@ -14,6 +14,7 @@
 import os
 import logging
 from collections import namedtuple
+import argparse
 
 # class Project:
 #
@@ -61,4 +62,7 @@ def dir_write(dir_list=os.listdir()):
 
 
 if __name__ == '__main__':
-    dir_write()
+    parser = argparse.ArgumentParser(description='dir info')
+    parser.add_argument('numbers', metavar='path', type=str, nargs='*', help='get dir path')
+    args = parser.parse_args()
+    dir_write(args)

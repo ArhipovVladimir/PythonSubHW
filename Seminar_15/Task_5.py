@@ -71,7 +71,7 @@ def get_date(*args):
             return None
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Solving quadratic equations')
+    parser = argparse.ArgumentParser(description='day week')
     parser.add_argument('-d', metavar='day', type=str,
                         help='number day', default=1)
     parser.add_argument('-w', metavar='weekday', type=str,
