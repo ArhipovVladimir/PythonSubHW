@@ -15,16 +15,17 @@
 
 from Task_2 import funk_round
 from Task_2 import verif
-from Task_3 import save_json
+from Task_3 import save_json, save_log
 from Task_4 import count_statr
 
 
 @count_statr(2)
 @save_json
+@save_log
 @verif
 def funk_start(*args):
     return funk_round(*args)
 
 if __name__ == '__main__':
-    funk_start(10, 3)
+    funk_start(120, 15)
 

@@ -5,20 +5,7 @@
 Напишите аналогичный декоратор, но внутри используйте
 модуль logging."""
 
-"""Задание №3
-Напишите декоратор, который сохраняет в json файл
-параметры декорируемой функции и результат, который она
-возвращает. При повторном вызове файл должен
-расширяться, а не перезаписываться.
-Каждый ключевой параметр сохраните как отдельный ключ
-json словаря.
-Для декорирования напишите функцию, которая может
-принимать как позиционные, так и ключевые аргументы.
-Имя файла должно совпадать с именем декорируемой
-функции."""
-import json
-import os
-from typing import Callable
+
 from functools import wraps
 import logging
 
@@ -37,8 +24,6 @@ def save_log(func):
         logging.basicConfig(filename='log/log.txt', format=FORMAT, style='{', level=logging.DEBUG, encoding='utf-8')
         logger = logging.getLogger(func.__name__)
         logger.debug({'args': (arg, kwargs), 'result': result})
-
-
     return wrapper
 
 
@@ -48,4 +33,3 @@ def get_sum(*arg, **kwargs):
 
 if __name__ == '__main__':
     get_sum(1, 2, 3)
-

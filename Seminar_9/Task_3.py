@@ -13,6 +13,7 @@ import json
 import os
 from typing import Callable
 from functools import wraps
+import logging
 
 def save_json(func):
     @wraps(func)
@@ -32,6 +33,23 @@ def save_json(func):
               json.dump(list_file, f_json, indent=1)
 
     return wrapper
+
+FORMAT = '{asctime} {levelname} {funcName}->{lineno}: {msg}'
+
+
+def save_log(func):
+    @wraps(func)
+    def wrapper(*arg, **kwargs):
+
+        result = func(*arg, **kwargs)
+        logging.basicConfig(filename='log/log.txt', format=FORMAT, style='{', level=logging.DEBUG, encoding='utf-8')
+        logger = logging.getLogger('main')
+        logger.debug({'args': (arg, kwargs), 'result': result})
+
+
+    return wrapper
+
+
 
 
 @save_json
