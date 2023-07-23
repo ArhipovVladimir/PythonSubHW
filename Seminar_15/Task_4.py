@@ -6,3 +6,10 @@
 Логируйте ошибки, если текст не соответсвует формату.
 
 """
+from datetime import datetime
+
+
+
+
+text_date = datetime.strptime(date_text, 'Дата %d %B %Y. День
+недели %A. Время %H:%M:%S. Это %W неделя и %j день года.')
