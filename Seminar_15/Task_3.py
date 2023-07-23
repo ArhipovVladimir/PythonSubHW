@@ -12,7 +12,7 @@
 from functools import wraps
 import logging
 
-FORMAT = '{asctime} {levelname}: {msg}'
+FORMAT = '{levelname} {asctime} : {msg}'
 logging.basicConfig(filename='log/log.txt', format=FORMAT, style='{', level=logging.INFO, encoding='utf-8')
 logger = logging.getLogger()
 
