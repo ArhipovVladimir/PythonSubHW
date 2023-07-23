@@ -11,8 +11,10 @@
 
 from datetime import datetime
 import logging
+import argparse
 
-week_day = {'понедьдик': 0,
+
+week_day = {'понедельник': 0,
             'вторник': 1,
             'среда': 2,
             'четверг': 3,
@@ -39,9 +41,9 @@ logging.basicConfig(filename='log/log.txt', format=FORMAT, style='{', level=logg
 logger = logging.getLogger(__name__)
 
 
-def get_date(date_text):
+def get_date(*args):
     try:
-        d, w, m, = date_text.split(' ')
+        d, w, m, = args
         if d >= 6:
             logger.error('не верный ввод')
     except Exception:
@@ -65,8 +67,18 @@ def get_date(date_text):
             if data_res.weekday() == weekday and count == d:
                 return data_res
         except Exception as e:
-            logger.error(f'не номер дня недели{e}')
+            logger.error(f'не номер дня недели {e}')
             return None
 
 if __name__ == '__main__':
-    print(get_date('5-й четверг марта'))
+    parser = argparse.ArgumentParser(description='Solving quadratic equations')
+    parser.add_argument('-d', metavar='day', type=str,
+                        help='number day', default=1)
+    parser.add_argument('-w', metavar='weekday', type=str,
+                        help='week day', default=datetime.now().weekday())
+    parser.add_argument('-m', metavar='month', type=str,
+                        help='month', default=datetime.now().month)
+    args = parser.parse_args()
+    print(get_date(args.d, args.w, args.m))
+
+    # print(get_date('5-й четверг марта'))
