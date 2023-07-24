@@ -15,6 +15,7 @@ import os
 import logging
 from collections import namedtuple
 import argparse
+from sys import argv
 
 # class Project:
 #
@@ -43,9 +44,12 @@ Object_dir = namedtuple('Object', ['name', 'exemp', 'is_dir', 'path'])
 
 
 
-def dir_write(dir_list=os.listdir()):
+def dir_write(dir_=os.getcwd()):
+    os.chdir(dir_)
+    # print(dir_)
     list_obj = []
-    for obj in dir_list:
+    for obj in os.listdir(os.getcwd()):
+        # print(obj)
         if os.path.isdir(obj):
             logger.info(f'{obj} {None} {os.path.isdir(obj)} {os.getcwd()}')
             list_obj.append(Object_dir(obj, None, os.path.isdir(obj), os.getcwd()))
@@ -63,6 +67,13 @@ def dir_write(dir_list=os.listdir()):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='dir info')
-    parser.add_argument('numbers', metavar='path', type=str, nargs='*', help='get dir path')
+    parser.add_argument('args', metavar='path', type=str, help='get dir path', default=os.getcwd())
     args = parser.parse_args()
-    dir_write(args)
+    # print(args)
+    # dir_write(args)
+    # dir_write()
+    # dir_write('C:\\Users\\arhip\\OneDrive\\Документы\\GB\\Python2\\PythonSubHW\\Seminar_9')
+    print(args.args)
+    # _, args = argv
+    dir_write(args.args)
+
