@@ -14,10 +14,9 @@ Object_dir = namedtuple('Object', ['name', 'exemp', 'is_dir', 'path'])
 
 
 def dir_write(dir_=os.getcwd()):
-    os.chdir(dir_)
     # print(dir_)
     list_obj = []
-    for obj in os.listdir(os.getcwd()):
+    for obj in os.listdir(dir_):
         # print(obj)
         if os.path.isdir(obj):
             logger.info(f'{obj} {None} {os.path.isdir(obj)} {os.getcwd()}')
